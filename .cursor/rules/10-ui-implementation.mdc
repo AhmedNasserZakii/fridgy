@@ -1,0 +1,38 @@
+---
+description: Rules for implementing Fridgy UI — screens, widgets, cubit wiring, states
+globs: lib/feature/**/presentation/**,lib/core/shared_widgets/**,lib/core/theme/**
+alwaysApply: false
+---
+
+# Fridgy UI implementation rules
+
+## Design fidelity
+- Match the provided design (Figma / screenshot) exactly: spacing, sizes, radii, colors, typography. If a value isn't in the design, ask instead of guessing.
+- Colors only from `AppColors` (`lib/core/theme/styles/app_colors.dart`). Text styles only from `AppTextStyles`. **No `Color(0x…)`, no inline `TextStyle(...)` in feature code.** If the design needs a new token, add it to `AppColors` / `AppTextStyles` with a semantic name (`textTertiary`, `surfaceMuted`), then use it.
+- Images/icons only through `AppAssets` (`lib/core/constants/app_assets.dart`); SVG via `flutter_svg`. Add new assets to `pubspec.yaml`.
+- Reuse shared widgets before creating new ones: `PrimaryButton`, `TextActionButton`, `FridgyBrandHeader`, `core/shared_widgets/bottom_sheet_widgets/`. A widget used by 2+ features goes to `core/shared_widgets/`; otherwise it stays in the feature.
+
+## Widget structure
+- **One widget per file.** No private `_Widget` classes inside pages; every piece goes to `presentation/widgets/` (group in subfolders: `sections/`, `state_views/`, `loading/`, `failure/` like `tara_car/lib/feature/onboarding/presentation/widgets/`).
+- Pages are thin: Scaffold + `BlocBuilder`/`BlocConsumer` + composition of widgets.
+- Prefer `StatelessWidget` + `const` constructors. Widgets receive entities/values via constructor — they never read repos, Dio, or JSON.
+- No hard-coded user-facing strings in widgets: use translation keys (`assets/translations/`, both `en` and `ar`). Layout must work in RTL (use `EdgeInsetsDirectional`, `AlignmentDirectional`, `start/end`).
+- Responsive: no fixed full-screen heights; handle small screens and keyboard (scrollable forms, `SafeArea`).
+
+## State & data
+- Every data-driven screen handles **4 states**: loading, empty, error, success.
+  - Loading: reuse the success content widget wrapped in `Skeletonizer` (no duplicated widget tree).
+  - Error: one feedback path only (toast **or** inline failure view, shown from presentation — never from core).
+  - Empty: dedicated empty-state widget.
+- Cubit + state live in `presentation/logic/`; state classes use `Equatable`; async cubit methods guard `isClosed`.
+- Cubits are provided from `AppRoute`, **not** created with `BlocProvider` inside the page.
+- Submit buttons are disabled / show loading while a request is in flight.
+- UI-only state (page index, tab, toggles) can use a small Cubit or `ChangeNotifier` in `presentation/logic/` (see `onboarding_steps_manager.dart`).
+
+## Where data comes from while there's no backend
+- Screens get data from the cubit → repo → Dio → `MockInterceptor` → `assets/mocks/<feature>/*.json`.
+- **Never** hard-code lists/fake items in widgets or cubits "for now". If the screen needs data and no mock exists, create the mock JSON (following `docs/api/README.md`) and the endpoint — or ask.
+- Static, never-from-server content (e.g. onboarding copy) may be a `const` list in `presentation/logic/` — confirm with the user that it will never come from the API.
+
+## After UI work
+`dart format` + `flutter analyze` on the feature; check both languages / RTL; check all 4 states by switching the mock scenario in `mock_routes.dart`.

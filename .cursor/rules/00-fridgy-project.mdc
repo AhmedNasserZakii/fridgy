@@ -1,0 +1,36 @@
+---
+description: Fridgy project workflow and architecture — always applies
+alwaysApply: true
+---
+
+# Fridgy — always follow these
+
+Full rules: @CLAUDE.md · API conventions: @docs/api/README.md · Reference project: `tara_car/` (patterns in @tara_car/AGENTS.md, reference slice `tara_car/lib/feature/onboarding/`). Never import from `tara_car/` — copy and adapt.
+
+## Workflow (contract-first, backend comes later)
+1. **Build** the feature against mock JSON in `assets/mocks/<feature>/` (see `.claude/skills/new-feature/SKILL.md`).
+2. **Design** the API doc `docs/api/<feature>.md` from the mocks (see `.claude/skills/api-design/SKILL.md`).
+3. User hands `docs/api/` to the backend developer.
+4. **Connect** to the real server by config only (see `.claude/skills/connect-backend/SKILL.md`).
+
+A feature is not done without its mock JSON files, its `docs/api/<feature>.md`, and its rows in `docs/api/STATUS.md`.
+
+## Before writing code
+- If the screens, data, states (loading / empty / error / success) or endpoints are unclear, **ask** — don't invent.
+- Propose the endpoint table (`METHOD path — purpose`) and wait for OK before building a new API-backed feature.
+
+## Architecture (don't deviate)
+```
+lib/feature/<feature>/
+  domain/entities/  domain/params/  domain/repos/ (contract + impl)
+  data/models/      data/data_source/ (real local cache only)
+  presentation/logic/ (Cubit + state)  presentation/pages/  presentation/widgets/
+```
+- Repos return `Either<ServerFailure, T>`; contract returns entities, not models.
+- Repo impls make **real Dio calls** through `ApiService` with `WebConstant` paths and `ApiKeys` keys. Mocks are served by `MockInterceptor` (`lib/core/network_services/mock/`) — never put fake data in repos, cubits, data sources or widgets.
+- Cubits depend on repo contracts; no use-case or remote_data_source layer.
+- Register dependencies in `core/di/service_locator.dart`; provide route cubits from `AppRoute`.
+- Don't add packages outside the stack listed in CLAUDE.md without asking. Don't refactor unrelated code.
+
+## Done checklist
+`dart format` + `flutter analyze` on changed paths, mock JSON valid and registered in `mock_routes.dart` + `pubspec.yaml`, API doc and STATUS updated. Say honestly what was run.

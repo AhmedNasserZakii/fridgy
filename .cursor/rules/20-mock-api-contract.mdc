@@ -1,0 +1,22 @@
+---
+description: Rules for mock JSON, models, repos and API docs — the backend contract
+globs: assets/mocks/**,lib/feature/**/data/**,lib/feature/**/domain/**,lib/core/network_services/**,docs/api/**
+alwaysApply: false
+---
+
+# Mock JSON = backend contract
+
+Shared conventions: @docs/api/README.md (envelope `success/message/data`, `meta` for pagination, `errors` map for 422, snake_case, ISO dates, string ids, keys always present with `null`).
+
+## Mock files
+- Path: `assets/mocks/<feature>/<method>_<resource>[_<scenario>].json` — e.g. `get_items.json`, `get_items_empty.json`, `post_item_422.json`.
+- Contains the **exact full response body** the backend will return, envelope included. Realistic values, 3–5 items for lists.
+- Each endpoint: one success mock + mocks for every error/empty case the UI handles.
+- Register every file in `lib/core/network_services/mock/mock_routes.dart` and add the folder to `pubspec.yaml` assets.
+
+## Models & repos
+- Models parse exactly the mock keys via `ApiKeys`; nullable where the API can send `null`; never fabricate fallback values. Map to entities with `toEntity()`.
+- Repo impls are production code: network guard → `apiService.client(requireAuth: …)` → parse → `Right`; `catch (e, stackTrace)` → `printDebug` → `Left(ServerFailure…)`.
+
+## Keep three things in sync
+Mock JSON ⇔ model ⇔ `docs/api/<feature>.md`. When one changes, update the other two in the same change and update `docs/api/STATUS.md`. Doc format: @docs/api/_TEMPLATE.md.
