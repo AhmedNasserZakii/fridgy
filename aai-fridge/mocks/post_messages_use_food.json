@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "conversation_id": "conv_3b91d4a2",
+    "mode": "use_food",
+    "reply_kind": "proposal",
+    "user_message": {
+      "id": "msg_u_11",
+      "role": "user",
+      "content": "I used half the milk and two eggs for breakfast.",
+      "created_at": "2026-10-31T10:15:00Z"
+    },
+    "assistant_message": {
+      "id": "msg_a_11",
+      "role": "assistant",
+      "content": "Nice. I matched those to your fridge. Confirm the updates, or try a recipe with what's left.",
+      "created_at": "2026-10-31T10:15:02Z"
+    },
+    "proposed_items": null,
+    "recipe_suggestions": [
+      {
+        "id": "rcp_88a1",
+        "title": "Tomato scrambled eggs",
+        "description": "A quick breakfast using eggs and tomatoes from your fridge.",
+        "uses_item_ids": ["itm_4d90", "itm_eggs01"]
+      },
+      {
+        "id": "rcp_88a2",
+        "title": "Creamy tomato pasta",
+        "description": "Use leftover milk and tomatoes for a simple sauce.",
+        "uses_item_ids": ["itm_4d90", "itm_veg01"]
+      }
+    ],
+    "proposed_consumptions": [
+      {
+        "id": "cons_milk_01",
+        "inventory_item_id": "itm_4d90",
+        "name": "Fresh Milk",
+        "quantity": 0.5,
+        "unit": "l"
+      },
+      {
+        "id": "cons_eggs_01",
+        "inventory_item_id": "itm_eggs01",
+        "name": "Eggs",
+        "quantity": 2,
+        "unit": "pcs"
+      }
+    ],
+    "clarification": null
+  }
+}

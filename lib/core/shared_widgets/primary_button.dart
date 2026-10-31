@@ -10,16 +10,21 @@ class PrimaryButton extends StatelessWidget {
     required this.onPressed,
     this.trailingIcon,
     this.isLoading = false,
+    this.isStroked = false,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final String? trailingIcon;
   final bool isLoading;
+  final bool isStroked;
 
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null && !isLoading;
+    final foreground = isStroked
+        ? AppColors.brandPrimary
+        : AppColors.textInverse;
 
     return SizedBox(
       width: double.infinity,
@@ -27,39 +32,49 @@ class PrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: enabled ? onPressed : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.brandPrimary,
-          disabledBackgroundColor: AppColors.brandPrimary.withValues(
-            alpha: 0.6,
-          ),
-          foregroundColor: AppColors.textInverse,
-          disabledForegroundColor: AppColors.textInverse,
+          backgroundColor: isStroked
+              ? AppColors.surfaceDefault
+              : AppColors.brandPrimary,
+          disabledBackgroundColor: isStroked
+              ? AppColors.surfaceDefault
+              : AppColors.brandPrimary.withValues(alpha: 0.6),
+          foregroundColor: foreground,
+          disabledForegroundColor: foreground.withValues(alpha: 0.6),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
+            side: isStroked
+                ? const BorderSide(color: AppColors.brandPrimary)
+                : BorderSide.none,
           ),
         ),
         child: isLoading
-            ? const SizedBox(
+            ? SizedBox(
                 width: 22,
                 height: 22,
                 child: CircularProgressIndicator(
                   strokeWidth: 2.5,
-                  color: AppColors.textInverse,
+                  color: foreground,
                 ),
               )
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(label, style: AppTextStyles.bodySemiBold16),
+                  Text(
+                    label,
+                    style: isStroked
+                        ? AppTextStyles.bodySemiBold16Brand
+                        : AppTextStyles.bodySemiBold16,
+                  ),
                   if (trailingIcon != null) ...[
                     const SizedBox(width: 8),
                     SvgPicture.asset(
                       trailingIcon!,
                       width: 20,
                       height: 20,
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.textInverse,
+                      colorFilter: ColorFilter.mode(
+                        foreground,
                         BlendMode.srcIn,
                       ),
                     ),

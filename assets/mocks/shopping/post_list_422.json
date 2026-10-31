@@ -1,0 +1,12 @@
+{
+  "success": false,
+  "message": "The given data was invalid.",
+  "errors": {
+    "name": [
+      "The name field is required."
+    ],
+    "quantity": [
+      "The quantity must be at least 0.01."
+    ]
+  }
+}

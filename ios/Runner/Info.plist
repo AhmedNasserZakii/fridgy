@@ -26,6 +26,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Fridgy needs camera access so you can photograph groceries for AI recognition.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Fridgy needs photo library access so you can upload grocery photos for AI recognition.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Fridgy may save photos you take for grocery recognition.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

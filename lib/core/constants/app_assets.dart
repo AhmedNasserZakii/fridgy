@@ -89,4 +89,12 @@ abstract class AppAssets {
   static const String icPencil = 'assets/icons/ic_pencil.svg';
   static const String icPencilLine = 'assets/icons/ic_pencil_line.svg';
   static const String icRefrigerator = 'assets/icons/ic_refrigerator.svg';
+
+  // Fridge AI (root icons/ is always in pubspec; fridge_ai/ also registered)
+  static const String icFridgyAvatar = 'assets/icons/ic_fridgy_avatar.svg';
+  static const String icShoppingBag = 'assets/icons/shopping-bag.svg';
+  static const String icCookingPot = 'assets/icons/cooking-pot.svg';
+  static const String icMic = 'assets/icons/mic.svg';
+  static const String icArrowUp = 'assets/icons/arrow-up.svg';
+  static const String icArrowUpLeft = 'assets/icons/ic_arrow_up_left.svg';
 }

@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "Cart is empty.",
+  "errors": {
+    "cart": [
+      "Add items before placing an order."
+    ]
+  }
+}

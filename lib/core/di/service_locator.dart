@@ -12,6 +12,10 @@ import 'package:fridgy/feature/auth/domain/repos/auth_repo.dart';
 import 'package:fridgy/feature/auth/domain/repos/auth_repo_impl.dart';
 import 'package:fridgy/feature/auth/presentation/logic/login_cubit.dart';
 import 'package:fridgy/feature/auth/presentation/logic/register_cubit.dart';
+import 'package:fridgy/feature/fridge_ai/domain/repos/fridge_ai_repo.dart';
+import 'package:fridgy/feature/fridge_ai/domain/repos/fridge_ai_repo_impl.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/logic/fridge_ai_cubit.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/logic/fridge_ai_history_cubit.dart';
 import 'package:fridgy/feature/home/domain/repos/home_repo.dart';
 import 'package:fridgy/feature/home/domain/repos/home_repo_impl.dart';
 import 'package:fridgy/feature/home/presentation/logic/home_cubit.dart';
@@ -39,6 +43,18 @@ import 'package:fridgy/feature/notification/presentation/logic/notifications_cub
 import 'package:fridgy/feature/profile_setup/domain/repos/profile_setup_repo.dart';
 import 'package:fridgy/feature/profile_setup/domain/repos/profile_setup_repo_impl.dart';
 import 'package:fridgy/feature/profile_setup/presentation/logic/profile_setup_cubit.dart';
+import 'package:fridgy/feature/shopping/domain/entities/fridge_intake_entity.dart';
+import 'package:fridgy/feature/shopping/domain/repos/shopping_repo.dart';
+import 'package:fridgy/feature/shopping/domain/repos/shopping_repo_impl.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/add_list_item_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/cart_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/catalog_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/fridge_intake_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/order_detail_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/orders_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/product_detail_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/shopping_hub_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/shopping_list_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -197,4 +213,39 @@ Future<void> setupServiceLocator() async {
     () => AppearanceCubit(themeController: getIt()),
   );
   getIt.registerFactory<UnitsCubit>(() => UnitsCubit(localStorage: getIt()));
+
+  getIt.registerLazySingleton<FridgeAiRepo>(
+    () => FridgeAiRepoImpl(apiService: getIt(), networkInfo: getIt()),
+  );
+  getIt.registerFactory<FridgeAiCubit>(
+    () => FridgeAiCubit(fridgeAiRepo: getIt(), inventoryRepo: getIt()),
+  );
+  getIt.registerFactory<FridgeAiHistoryCubit>(
+    () => FridgeAiHistoryCubit(fridgeAiRepo: getIt()),
+  );
+
+  getIt.registerLazySingleton<ShoppingRepo>(
+    () => ShoppingRepoImpl(apiService: getIt(), networkInfo: getIt()),
+  );
+  getIt.registerFactory<ShoppingHubCubit>(ShoppingHubCubit.new);
+  getIt.registerFactory<ShoppingListCubit>(
+    () => ShoppingListCubit(shoppingRepo: getIt()),
+  );
+  getIt.registerFactory<CatalogCubit>(
+    () => CatalogCubit(shoppingRepo: getIt()),
+  );
+  getIt.registerFactory<CartCubit>(() => CartCubit(shoppingRepo: getIt()));
+  getIt.registerFactory<OrdersCubit>(() => OrdersCubit(shoppingRepo: getIt()));
+  getIt.registerFactory<OrderDetailCubit>(
+    () => OrderDetailCubit(shoppingRepo: getIt()),
+  );
+  getIt.registerFactory<AddListItemCubit>(
+    () => AddListItemCubit(shoppingRepo: getIt()),
+  );
+  getIt.registerFactory<ProductDetailCubit>(
+    () => ProductDetailCubit(shoppingRepo: getIt()),
+  );
+  getIt.registerFactoryParam<FridgeIntakeCubit, FridgeIntakeEntity, void>(
+    (intake, _) => FridgeIntakeCubit(shoppingRepo: getIt(), intake: intake),
+  );
 }

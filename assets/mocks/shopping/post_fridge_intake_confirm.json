@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "message": "Added to your fridge",
+  "data": {
+    "intake_id": "fi_01",
+    "created_inventory_ids": [
+      "itm_shop_01",
+      "itm_shop_02"
+    ],
+    "created_count": 2
+  }
+}

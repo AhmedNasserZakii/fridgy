@@ -64,6 +64,11 @@ class MockInterceptor extends Interceptor {
     String path,
     MockResponse mock,
   ) async {
+    if (path == WebConstant.fridgeAiMessages &&
+        options.method.toUpperCase() == 'POST') {
+      return _resolveFridgeAiMessage(options, mock);
+    }
+
     if (path != WebConstant.inventorySearch) return mock;
 
     final q = options.queryParameters['q']?.toString() ?? '';
@@ -72,6 +77,33 @@ class MockInterceptor extends Interceptor {
     final hasMatch = await _searchHasMatch(q.trim());
     if (hasMatch) return mock;
     return MockRoutes.searchEmpty;
+  }
+
+  MockResponse _resolveFridgeAiMessage(
+    RequestOptions options,
+    MockResponse mock,
+  ) {
+    final key = 'POST ${WebConstant.fridgeAiMessages}';
+    if (MockRoutes.overrides.containsKey(key)) return mock;
+
+    final data = options.data;
+    if (data is! Map) return MockRoutes.fridgeAiMessagesAddFood;
+
+    final mode = data['mode']?.toString();
+    if (mode == 'use_food') {
+      return MockRoutes.fridgeAiMessagesUseFood;
+    }
+
+    final message = (data['message']?.toString() ?? '').toLowerCase().trim();
+    final needsQuantity = message.contains('some milk') ||
+        (message.contains('bought') &&
+            message.contains('milk') &&
+            !RegExp(r'\d').hasMatch(message));
+    if (needsQuantity) {
+      return MockRoutes.fridgeAiMessagesClarification;
+    }
+
+    return MockRoutes.fridgeAiMessagesAddFood;
   }
 
   Future<bool> _searchHasMatch(String query) async {

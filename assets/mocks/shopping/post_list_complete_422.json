@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "Select at least one checked item.",
+  "errors": {
+    "items": [
+      "No checked items on the shopping list."
+    ]
+  }
+}

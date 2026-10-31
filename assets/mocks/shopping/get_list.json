@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "sli_01",
+      "name": "Baby Spinach",
+      "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&h=400&q=80",
+      "quantity": 2,
+      "unit": "pcs",
+      "category": "vegetables",
+      "is_checked": false,
+      "catalog_product_id": "prd_01",
+      "notes": null,
+      "created_at": "2026-10-28T10:00:00Z",
+      "updated_at": "2026-10-28T10:00:00Z"
+    },
+    {
+      "id": "sli_02",
+      "name": "Greek Yogurt",
+      "image_url": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&h=400&q=80",
+      "quantity": 1,
+      "unit": "pcs",
+      "category": "dairy",
+      "is_checked": true,
+      "catalog_product_id": "prd_02",
+      "notes": null,
+      "created_at": "2026-10-27T09:00:00Z",
+      "updated_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sli_03",
+      "name": "Chicken Breast",
+      "image_url": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&h=400&q=80",
+      "quantity": 500,
+      "unit": "g",
+      "category": "meat",
+      "is_checked": false,
+      "catalog_product_id": "prd_03",
+      "notes": "Boneless",
+      "created_at": "2026-10-29T08:00:00Z",
+      "updated_at": "2026-10-29T08:00:00Z"
+    },
+    {
+      "id": "sli_04",
+      "name": "Bananas",
+      "image_url": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&h=400&q=80",
+      "quantity": 6,
+      "unit": "pcs",
+      "category": "fruits",
+      "is_checked": true,
+      "catalog_product_id": "prd_04",
+      "notes": null,
+      "created_at": "2026-10-26T11:00:00Z",
+      "updated_at": "2026-10-30T11:00:00Z"
+    },
+    {
+      "id": "sli_05",
+      "name": "Sourdough Bread",
+      "image_url": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=400&h=400&q=80",
+      "quantity": 1,
+      "unit": "pcs",
+      "category": "bakery",
+      "is_checked": false,
+      "catalog_product_id": null,
+      "notes": null,
+      "created_at": "2026-10-30T07:00:00Z",
+      "updated_at": "2026-10-30T07:00:00Z"
+    }
+  ]
+}

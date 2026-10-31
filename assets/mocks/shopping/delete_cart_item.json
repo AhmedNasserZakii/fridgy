@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "message": "Removed from cart",
+  "data": {
+    "id": "cart_01",
+    "items": [
+      {
+        "id": "ci_02",
+        "catalog_product_id": "prd_06",
+        "name": "Tomatoes",
+        "image_url": "https://images.unsplash.com/photo-1546470427-e2706767e0c1?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 1,
+        "unit": "kg",
+        "category": "vegetables",
+        "unit_price": 22.0,
+        "currency": "EGP",
+        "line_total": 22.0
+      }
+    ],
+    "item_count": 1,
+    "subtotal": 22.0,
+    "currency": "EGP",
+    "updated_at": "2026-10-31T12:30:00Z"
+  }
+}

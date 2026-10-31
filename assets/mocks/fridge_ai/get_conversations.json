@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "conv_7f2a1c9e",
+      "mode": "add_food",
+      "title": "Milk, eggs & tomatoes",
+      "preview": "Got it — I found 3 items to add. Review them and confirm when you're ready.",
+      "created_at": "2026-10-31T09:41:00Z",
+      "updated_at": "2026-10-31T09:41:02Z"
+    },
+    {
+      "id": "conv_3b91d4a2",
+      "mode": "use_food",
+      "title": "Breakfast update",
+      "preview": "Nice. I matched those to your fridge. Confirm the updates, or try a recipe with what's left.",
+      "created_at": "2026-10-30T18:20:00Z",
+      "updated_at": "2026-10-30T18:20:05Z"
+    },
+    {
+      "id": "conv_9e11ab44",
+      "mode": "add_food",
+      "title": "Chicken & bread",
+      "preview": "Added suggestions for chicken breast and sourdough.",
+      "created_at": "2026-10-28T12:05:00Z",
+      "updated_at": "2026-10-28T12:05:08Z"
+    },
+    {
+      "id": "conv_55cd0021",
+      "mode": "use_food",
+      "title": "Dinner leftovers",
+      "preview": "Marked spinach and half the cheese as used.",
+      "created_at": "2026-10-27T20:11:00Z",
+      "updated_at": "2026-10-27T20:11:04Z"
+    },
+    {
+      "id": "conv_a1b2c3d4",
+      "mode": "add_food",
+      "title": "Weekly shop",
+      "preview": "Proposed 5 items from your shopping list message.",
+      "created_at": "2026-10-25T16:40:00Z",
+      "updated_at": "2026-10-25T16:40:10Z"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 5,
+    "last_page": 1
+  }
+}

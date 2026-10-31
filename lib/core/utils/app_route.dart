@@ -6,6 +6,10 @@ import 'package:fridgy/feature/auth/presentation/logic/login_cubit.dart';
 import 'package:fridgy/feature/auth/presentation/logic/register_cubit.dart';
 import 'package:fridgy/feature/auth/presentation/pages/sign_in_screen.dart';
 import 'package:fridgy/feature/auth/presentation/pages/sign_up_screen.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/logic/fridge_ai_cubit.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/logic/fridge_ai_history_cubit.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/pages/fridge_ai_history_screen.dart';
+import 'package:fridgy/feature/fridge_ai/presentation/pages/fridge_ai_screen.dart';
 import 'package:fridgy/feature/home/presentation/logic/home_cubit.dart';
 import 'package:fridgy/feature/inventory/presentation/logic/expiring_soon_cubit.dart';
 import 'package:fridgy/feature/inventory/presentation/logic/food_detail_cubit.dart';
@@ -35,6 +39,19 @@ import 'package:fridgy/feature/onboarding/presentation/pages/onboarding_steps_sc
 import 'package:fridgy/feature/onboarding/presentation/pages/welcome_screen.dart';
 import 'package:fridgy/feature/profile_setup/presentation/logic/profile_setup_cubit.dart';
 import 'package:fridgy/feature/profile_setup/presentation/pages/profile_setup_screen.dart';
+import 'package:fridgy/feature/shopping/domain/entities/fridge_intake_entity.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/add_list_item_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/cart_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/fridge_intake_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/order_detail_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/orders_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/logic/product_detail_cubit.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/add_list_item_screen.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/cart_screen.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/fridge_intake_screen.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/order_detail_screen.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/orders_screen.dart';
+import 'package:fridgy/feature/shopping/presentation/pages/product_detail_screen.dart';
 import 'package:fridgy/feature/splash/view/splash_screen.dart';
 
 abstract class AppRoute {
@@ -62,6 +79,14 @@ abstract class AppRoute {
   static const String units = '/units';
   static const String privacy = '/privacy';
   static const String help = '/help';
+  static const String fridgeAi = '/fridge-ai';
+  static const String fridgeAiHistory = '/fridge-ai/history';
+  static const String shoppingAddListItem = '/shopping/add-list-item';
+  static const String shoppingProductDetail = '/shopping/product';
+  static const String shoppingCart = '/shopping/cart';
+  static const String shoppingOrders = '/shopping/orders';
+  static const String shoppingOrderDetail = '/shopping/order';
+  static const String shoppingFridgeIntake = '/shopping/fridge-intake';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -241,6 +266,73 @@ abstract class AppRoute {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => const HelpScreen(),
+        );
+      case fridgeAi:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<FridgeAiCubit>(),
+            child: const FridgeAiScreen(),
+          ),
+        );
+      case fridgeAiHistory:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<FridgeAiHistoryCubit>()..load(),
+            child: const FridgeAiHistoryScreen(),
+          ),
+        );
+      case shoppingAddListItem:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<AddListItemCubit>(),
+            child: const AddListItemScreen(),
+          ),
+        );
+      case shoppingProductDetail:
+        final productId = settings.arguments as String? ?? '';
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<ProductDetailCubit>()..load(productId),
+            child: ProductDetailScreen(productId: productId),
+          ),
+        );
+      case shoppingCart:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<CartCubit>(),
+            child: const CartScreen(),
+          ),
+        );
+      case shoppingOrders:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<OrdersCubit>(),
+            child: const OrdersScreen(),
+          ),
+        );
+      case shoppingOrderDetail:
+        final orderId = settings.arguments as String? ?? '';
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<OrderDetailCubit>()..load(orderId),
+            child: OrderDetailScreen(orderId: orderId),
+          ),
+        );
+      case shoppingFridgeIntake:
+        final intake = settings.arguments as FridgeIntakeEntity;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<FridgeIntakeCubit>(param1: intake),
+            child: const FridgeIntakeScreen(),
+          ),
         );
       default:
         return MaterialPageRoute(

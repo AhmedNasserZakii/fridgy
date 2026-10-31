@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "ord_01",
+      "status": "placed",
+      "items": [
+        {
+          "id": "oi_01",
+          "catalog_product_id": "prd_05",
+          "name": "Whole Milk",
+          "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&h=400&q=80",
+          "quantity": 2,
+          "unit": "l",
+          "category": "dairy",
+          "storage": "fridge"
+        },
+        {
+          "id": "oi_02",
+          "catalog_product_id": "prd_06",
+          "name": "Tomatoes",
+          "image_url": "https://images.unsplash.com/photo-1546470427-e2706767e0c1?auto=format&fit=crop&w=400&h=400&q=80",
+          "quantity": 1,
+          "unit": "kg",
+          "category": "vegetables",
+          "storage": "fridge"
+        }
+      ],
+      "item_count": 2,
+      "placed_at": "2026-10-30T16:00:00Z",
+      "received_at": null,
+      "added_to_fridge_at": null,
+      "currency": "EGP",
+      "total": 98.0
+    },
+    {
+      "id": "ord_02",
+      "status": "received",
+      "items": [
+        {
+          "id": "oi_03",
+          "catalog_product_id": "prd_02",
+          "name": "Greek Yogurt",
+          "image_url": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&h=400&q=80",
+          "quantity": 1,
+          "unit": "pcs",
+          "category": "dairy",
+          "storage": "fridge"
+        }
+      ],
+      "item_count": 1,
+      "placed_at": "2026-10-28T12:00:00Z",
+      "received_at": "2026-10-29T09:00:00Z",
+      "added_to_fridge_at": null,
+      "currency": "EGP",
+      "total": 45.0
+    },
+    {
+      "id": "ord_03",
+      "status": "added_to_fridge",
+      "items": [
+        {
+          "id": "oi_04",
+          "catalog_product_id": "prd_04",
+          "name": "Bananas",
+          "image_url": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&h=400&q=80",
+          "quantity": 6,
+          "unit": "pcs",
+          "category": "fruits",
+          "storage": "pantry"
+        }
+      ],
+      "item_count": 1,
+      "placed_at": "2026-10-25T10:00:00Z",
+      "received_at": "2026-10-26T08:00:00Z",
+      "added_to_fridge_at": "2026-10-26T08:30:00Z",
+      "currency": "EGP",
+      "total": 30.0
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 3,
+    "last_page": 1
+  }
+}

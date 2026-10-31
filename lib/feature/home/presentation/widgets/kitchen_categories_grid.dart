@@ -11,6 +11,8 @@ class KitchenCategoriesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = KitchenCategory.values;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -19,17 +21,24 @@ class KitchenCategoriesGrid extends StatelessWidget {
           style: AppTextStyles.titleBold20,
         ),
         const SizedBox(height: 16),
-        Wrap(
-          spacing: 12,
-          runSpacing: 12,
-          children: [
-            for (final category in KitchenCategory.values)
-              KitchenCategoryTile(
-                category: category,
-                onTap: () =>
-                    AppSnackBar.show(context, LocaleKeys.comingSoon.tr()),
-              ),
-          ],
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: categories.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
+            childAspectRatio: 1.2,
+          ),
+          itemBuilder: (context, index) {
+            final category = categories[index];
+            return KitchenCategoryTile(
+              category: category,
+              onTap: () =>
+                  AppSnackBar.show(context, LocaleKeys.comingSoon.tr()),
+            );
+          },
         ),
       ],
     );

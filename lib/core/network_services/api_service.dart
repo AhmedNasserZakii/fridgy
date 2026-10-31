@@ -32,6 +32,25 @@ class ApiService {
     );
   }
 
+  /// Multipart upload. Do not set `Content-Type` — Dio adds the boundary.
+  Future<Response<dynamic>> postMultipart(
+    String path, {
+    required FormData data,
+    bool requireAuth = false,
+  }) {
+    return _dio.post<dynamic>(
+      path,
+      data: data,
+      options: Options(
+        headers: {
+          'Accept': 'application/json',
+          'Accept-Language': _localStorage.getLocaleLanguage(),
+        },
+        extra: {TokenInterceptor.requireAuthExtra: requireAuth},
+      ),
+    );
+  }
+
   Future<Response<dynamic>> put(
     String path, {
     Object? data,

@@ -30,4 +30,28 @@ abstract class WebConstant {
   static const String notifications = 'notifications';
   static const String notificationsReadAll = 'notifications/read-all';
   static String notificationRead(String id) => 'notifications/$id/read';
+
+  // Fridge AI
+  static const String fridgeAiMessages = 'fridge-ai/messages';
+  static const String fridgeAiMessagesImage = 'fridge-ai/messages/image';
+  static const String fridgeAiConversations = 'fridge-ai/conversations';
+  static String fridgeAiConversationMessages(String id) =>
+      'fridge-ai/conversations/$id/messages';
+
+  // Shopping
+  static const String shoppingList = 'shopping/list';
+  static String shoppingListItem(String id) => 'shopping/list/$id';
+  static String shoppingListToggle(String id) => 'shopping/list/$id/toggle';
+  static const String shoppingListComplete = 'shopping/list/complete';
+  static const String shoppingCatalog = 'shopping/catalog';
+  static String shoppingCatalogProduct(String id) => 'shopping/catalog/$id';
+  static const String shoppingCart = 'shopping/cart';
+  static const String shoppingCartItems = 'shopping/cart/items';
+  static String shoppingCartItem(String id) => 'shopping/cart/items/$id';
+  static const String shoppingOrders = 'shopping/orders';
+  static String shoppingOrder(String id) => 'shopping/orders/$id';
+  static String shoppingOrderComplete(String id) =>
+      'shopping/orders/$id/complete';
+  static String shoppingFridgeIntakeConfirm(String id) =>
+      'shopping/fridge-intake/$id/confirm';
 }

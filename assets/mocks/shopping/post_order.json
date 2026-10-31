@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "message": "Order placed",
+  "data": {
+    "id": "ord_01",
+    "status": "placed",
+    "items": [
+      {
+        "id": "oi_01",
+        "catalog_product_id": "prd_05",
+        "name": "Whole Milk",
+        "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 2,
+        "unit": "l",
+        "category": "dairy",
+        "storage": "fridge"
+      },
+      {
+        "id": "oi_02",
+        "catalog_product_id": "prd_06",
+        "name": "Tomatoes",
+        "image_url": "https://images.unsplash.com/photo-1546470427-e2706767e0c1?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 1,
+        "unit": "kg",
+        "category": "vegetables",
+        "storage": "fridge"
+      }
+    ],
+    "item_count": 2,
+    "placed_at": "2026-10-30T16:00:00Z",
+    "received_at": null,
+    "added_to_fridge_at": null,
+    "currency": "EGP",
+    "total": 98.0
+  }
+}

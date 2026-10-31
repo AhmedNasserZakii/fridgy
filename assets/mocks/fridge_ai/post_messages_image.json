@@ -1,0 +1,64 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "conversation_id": "conv_img_91c2",
+    "mode": "add_food",
+    "reply_kind": "proposal",
+    "user_message": {
+      "id": "msg_u_img_01",
+      "role": "user",
+      "content": "What's in this photo?",
+      "created_at": "2026-10-31T12:05:00Z",
+      "image_url": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&h=600&q=80"
+    },
+    "assistant_message": {
+      "id": "msg_a_img_01",
+      "role": "assistant",
+      "content": "I spotted these groceries in your photo. Review the list and add them to your fridge.",
+      "created_at": "2026-10-31T12:05:03Z",
+      "image_url": null
+    },
+    "proposed_items": [
+      {
+        "id": "prop_img_apple_01",
+        "name": "Apples",
+        "quantity": 4,
+        "unit": "pcs",
+        "category": "fruits",
+        "expires_at": "2026-11-08",
+        "emoji": "🍎"
+      },
+      {
+        "id": "prop_img_banana_01",
+        "name": "Bananas",
+        "quantity": 1,
+        "unit": "kg",
+        "category": "fruits",
+        "expires_at": "2026-11-04",
+        "emoji": "🍌"
+      },
+      {
+        "id": "prop_img_bread_01",
+        "name": "Bread",
+        "quantity": 1,
+        "unit": "pcs",
+        "category": "bakery",
+        "expires_at": "2026-11-02",
+        "emoji": "🍞"
+      },
+      {
+        "id": "prop_img_yogurt_01",
+        "name": "Yogurt",
+        "quantity": 2,
+        "unit": "pcs",
+        "category": "dairy",
+        "expires_at": "2026-11-06",
+        "emoji": "🥛"
+      }
+    ],
+    "recipe_suggestions": null,
+    "proposed_consumptions": null,
+    "clarification": null
+  }
+}

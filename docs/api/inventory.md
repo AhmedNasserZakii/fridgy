@@ -618,12 +618,25 @@ Example `422`:
 
 `POST /inventory/{id}/consume`
 
-**When the app calls it:** User taps “Mark as consumed” on Food Detail. The app ignores response `data` (expects `null` on success) and navigates back on success.
+**When the app calls it:**
+- Food Detail → “Mark as consumed” (full consume: **no body**)
+- Fridge AI Use Food confirm → once per `ProposedConsumption` with body `{ "quantity": <amount> }` for partial use
 
 **Path params:** `id` (string)
 
-**Query params:** none  
-**Request body:** none
+**Query params:** none
+
+**Request body:** optional
+
+```json
+{
+  "quantity": 0.5
+}
+```
+
+| Field | Type | Required | Rules |
+| --- | --- | --- | --- |
+| `quantity` | number | no | When omitted/`null`, consume the whole item. When set, reduce stock by this amount (`> 0`). |
 
 **Success — `200`:**
 
@@ -640,6 +653,7 @@ Example `422`:
 | Status | When | `errors` keys |
 | --- | --- | --- |
 | `404` | Unknown id | `null` |
+| `422` | Invalid `quantity` (e.g. `<= 0`) | `quantity` |
 
 Example `404`:
 
@@ -900,6 +914,6 @@ Example `404`:
 
 ## Open questions for backend
 
-- Exact server behavior for **consume** (delete row vs set `quantity` to `0`) — the app only requires `200` with `data: null` and then refreshes lists.
+- Exact server behavior for **consume** — full consume (no body): delete row or set `quantity` to `0`. Partial consume (`quantity` in body): reduce remaining stock; if remaining hits `0`, same as out of stock. App only requires `200` with `data: null` and then refreshes lists.
 - Thresholds for **`use_soon` vs `fresh` vs `expired`** (must stay consistent with Home `kitchen_summary.expiring_soon_count` and `use_first`).
 - Whether **`include_out_of_stock=false`** should hide qty=0 items when no `status=out_of_stock` filter is set (app relies on this for My Fridge footer vs active list).

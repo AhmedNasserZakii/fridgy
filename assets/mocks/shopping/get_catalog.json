@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "prd_01",
+      "name": "Baby Spinach",
+      "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "vegetables",
+      "default_quantity": 1,
+      "unit": "pcs",
+      "default_storage": "fridge",
+      "price": 25.0,
+      "currency": "EGP"
+    },
+    {
+      "id": "prd_02",
+      "name": "Greek Yogurt",
+      "image_url": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "dairy",
+      "default_quantity": 1,
+      "unit": "pcs",
+      "default_storage": "fridge",
+      "price": 45.0,
+      "currency": "EGP"
+    },
+    {
+      "id": "prd_03",
+      "name": "Chicken Breast",
+      "image_url": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "meat",
+      "default_quantity": 500,
+      "unit": "g",
+      "default_storage": "fridge",
+      "price": 120.0,
+      "currency": "EGP"
+    },
+    {
+      "id": "prd_04",
+      "name": "Bananas",
+      "image_url": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "fruits",
+      "default_quantity": 6,
+      "unit": "pcs",
+      "default_storage": "pantry",
+      "price": 30.0,
+      "currency": "EGP"
+    },
+    {
+      "id": "prd_05",
+      "name": "Whole Milk",
+      "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "dairy",
+      "default_quantity": 1,
+      "unit": "l",
+      "default_storage": "fridge",
+      "price": 38.0,
+      "currency": "EGP"
+    },
+    {
+      "id": "prd_06",
+      "name": "Tomatoes",
+      "image_url": "https://images.unsplash.com/photo-1546470427-e2706767e0c1?auto=format&fit=crop&w=400&h=400&q=80",
+      "category": "vegetables",
+      "default_quantity": 1,
+      "unit": "kg",
+      "default_storage": "fridge",
+      "price": 22.0,
+      "currency": "EGP"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 6,
+    "last_page": 1
+  }
+}

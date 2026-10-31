@@ -1,0 +1,1 @@
+enum ShoppingHubTab { list, store }

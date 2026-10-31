@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "message": "The given data was invalid.",
+  "errors": {
+    "message": ["The message field is required."]
+  }
+}

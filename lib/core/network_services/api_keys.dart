@@ -93,4 +93,52 @@ abstract class ApiKeys {
   static const String shoppingListUpdates = 'shopping_list_updates';
   static const String householdActivity = 'household_activity';
   static const String weeklyImpactRecap = 'weekly_impact_recap';
+
+  // Fridge AI
+  static const String mode = 'mode';
+  static const String conversationId = 'conversation_id';
+  static const String userMessage = 'user_message';
+  static const String assistantMessage = 'assistant_message';
+  static const String replyKind = 'reply_kind';
+  static const String proposedItems = 'proposed_items';
+  static const String recipeSuggestions = 'recipe_suggestions';
+  static const String proposedConsumptions = 'proposed_consumptions';
+  static const String clarification = 'clarification';
+  static const String targetItem = 'target_item';
+  static const String quickReplies = 'quick_replies';
+  static const String hint = 'hint';
+  static const String note = 'note';
+  static const String cancelLabel = 'cancel_label';
+  static const String cancelMessage = 'cancel_message';
+  static const String label = 'label';
+  static const String role = 'role';
+  static const String content = 'content';
+  static const String image = 'image';
+  static const String expiresAt = 'expires_at';
+  static const String inventoryItemId = 'inventory_item_id';
+  static const String preview = 'preview';
+  static const String updatedAt = 'updated_at';
+  static const String messages = 'messages';
+
+  // Shopping
+  static const String isChecked = 'is_checked';
+  static const String catalogProductId = 'catalog_product_id';
+  static const String notes = 'notes';
+  static const String defaultQuantity = 'default_quantity';
+  static const String defaultStorage = 'default_storage';
+  static const String price = 'price';
+  static const String unitPrice = 'unit_price';
+  static const String lineTotal = 'line_total';
+  static const String itemCount = 'item_count';
+  static const String subtotal = 'subtotal';
+  static const String lines = 'lines';
+  static const String source = 'source';
+  static const String sourceId = 'source_id';
+  static const String items = 'items';
+  static const String placedAt = 'placed_at';
+  static const String receivedAt = 'received_at';
+  static const String addedToFridgeAt = 'added_to_fridge_at';
+  static const String intakeId = 'intake_id';
+  static const String createdInventoryIds = 'created_inventory_ids';
+  static const String createdCount = 'created_count';
 }

@@ -115,7 +115,10 @@ class InventoryRepoImpl implements InventoryRepo {
   }
 
   @override
-  Future<Either<ServerFailure, void>> consume(String id) async {
+  Future<Either<ServerFailure, void>> consume(
+    String id, {
+    num? quantity,
+  }) async {
     try {
       if (!await _networkInfo.isConnected) {
         return Left(ServerFailure(LocaleKeys.noInternetConnection.tr()));
@@ -123,6 +126,9 @@ class InventoryRepoImpl implements InventoryRepo {
 
       await _apiService.post(
         WebConstant.inventoryConsume(id),
+        data: quantity == null
+            ? null
+            : <String, dynamic>{ApiKeys.quantity: quantity},
         requireAuth: true,
       );
       return const Right(null);

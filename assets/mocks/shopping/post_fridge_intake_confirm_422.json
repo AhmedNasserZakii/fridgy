@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "The given data was invalid.",
+  "errors": {
+    "lines": [
+      "Each line needs a name and quantity."
+    ]
+  }
+}

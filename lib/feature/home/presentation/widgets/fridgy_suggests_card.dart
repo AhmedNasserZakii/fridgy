@@ -6,6 +6,7 @@ import 'package:fridgy/core/constants/locale_keys.dart';
 import 'package:fridgy/core/shared_widgets/app_snack_bar.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/core/theme/styles/app_text_styles.dart';
+import 'package:fridgy/core/utils/app_route.dart';
 import 'package:fridgy/feature/home/domain/entities/suggestion_entity.dart';
 
 class FridgySuggestsCard extends StatelessWidget {
@@ -35,8 +36,7 @@ class FridgySuggestsCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               InkWell(
-                onTap: () =>
-                    AppSnackBar.show(context, LocaleKeys.comingSoon.tr()),
+                onTap: () => Navigator.of(context).pushNamed(AppRoute.fridgeAi),
                 borderRadius: BorderRadius.circular(12),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),

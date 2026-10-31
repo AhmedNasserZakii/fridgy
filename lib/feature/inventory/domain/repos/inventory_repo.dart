@@ -29,5 +29,7 @@ abstract class InventoryRepo {
     UpsertFoodParams params,
   );
 
-  Future<Either<ServerFailure, void>> consume(String id);
+  /// Marks an item consumed. When [quantity] is null, the whole item is
+  /// consumed. When set, the server reduces stock by that amount (partial use).
+  Future<Either<ServerFailure, void>> consume(String id, {num? quantity});
 }

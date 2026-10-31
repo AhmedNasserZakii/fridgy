@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "message": "Added to cart",
+  "data": {
+    "id": "cart_01",
+    "items": [
+      {
+        "id": "ci_01",
+        "catalog_product_id": "prd_05",
+        "name": "Whole Milk",
+        "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 2,
+        "unit": "l",
+        "category": "dairy",
+        "unit_price": 38.0,
+        "currency": "EGP",
+        "line_total": 76.0
+      },
+      {
+        "id": "ci_02",
+        "catalog_product_id": "prd_06",
+        "name": "Tomatoes",
+        "image_url": "https://images.unsplash.com/photo-1546470427-e2706767e0c1?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 1,
+        "unit": "kg",
+        "category": "vegetables",
+        "unit_price": 22.0,
+        "currency": "EGP",
+        "line_total": 22.0
+      },
+      {
+        "id": "ci_03",
+        "catalog_product_id": "prd_01",
+        "name": "Baby Spinach",
+        "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&h=400&q=80",
+        "quantity": 1,
+        "unit": "pcs",
+        "category": "vegetables",
+        "unit_price": 25.0,
+        "currency": "EGP",
+        "line_total": 25.0
+      }
+    ],
+    "item_count": 3,
+    "subtotal": 123.0,
+    "currency": "EGP",
+    "updated_at": "2026-10-31T12:20:00Z"
+  }
+}

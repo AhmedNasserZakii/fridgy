@@ -44,6 +44,77 @@ abstract class AppTextStyles {
     color: AppColors.textPrimary,
   );
 
+  static const TextStyle titleBold28 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 28,
+    fontWeight: FontWeight.w700,
+    height: 34 / 28,
+    letterSpacing: 0.38,
+    color: AppColors.textPrimary,
+  );
+
+  static const TextStyle appBarTitleSemiBold17 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w600,
+    height: 22 / 17,
+    letterSpacing: -0.43,
+    color: AppColors.textPrimary,
+  );
+
+  static const TextStyle appBarActionRegular17 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w400,
+    height: 22 / 17,
+    letterSpacing: -0.43,
+    color: AppColors.brandPrimary,
+  );
+
+  static const TextStyle bodyRegular17Secondary = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w400,
+    height: 22 / 17,
+    letterSpacing: -0.43,
+    color: AppColors.textSecondary,
+  );
+
+  static const TextStyle bodySemiBold17Primary = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w600,
+    height: 22 / 17,
+    letterSpacing: -0.43,
+    color: AppColors.textPrimary,
+  );
+
+  static const TextStyle secondaryBodyRegular15 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 1.28,
+    color: AppColors.textSecondary,
+  );
+
+  static const TextStyle segmentSelectedSemiBold13 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    height: 18 / 13,
+    letterSpacing: -0.08,
+    color: AppColors.textInverse,
+  );
+
+  static const TextStyle segmentUnselectedRegular13 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    height: 18 / 13,
+    letterSpacing: -0.08,
+    color: AppColors.textSecondary,
+  );
+
   static const TextStyle titleBold22 = TextStyle(
     fontFamily: _fontFamily,
     fontSize: 22,

@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "conversation_id": "conv_7f2a1c9e",
+    "mode": "add_food",
+    "reply_kind": "proposal",
+    "user_message": {
+      "id": "msg_u_01",
+      "role": "user",
+      "content": "I bought 2 liters of milk, 12 eggs, and half a kilo of tomatoes.",
+      "created_at": "2026-10-31T09:41:00Z"
+    },
+    "assistant_message": {
+      "id": "msg_a_01",
+      "role": "assistant",
+      "content": "Got it — I found 3 items to add. Review them and confirm when you're ready.",
+      "created_at": "2026-10-31T09:41:02Z"
+    },
+    "proposed_items": [
+      {
+        "id": "prop_milk_01",
+        "name": "Milk",
+        "quantity": 2,
+        "unit": "l",
+        "category": "dairy",
+        "expires_at": "2026-11-05",
+        "emoji": "🥛"
+      },
+      {
+        "id": "prop_eggs_01",
+        "name": "Eggs",
+        "quantity": 12,
+        "unit": "pcs",
+        "category": "dairy",
+        "expires_at": "2026-11-14",
+        "emoji": "🥚"
+      },
+      {
+        "id": "prop_tomatoes_01",
+        "name": "Tomatoes",
+        "quantity": 0.5,
+        "unit": "kg",
+        "category": "vegetables",
+        "expires_at": "2026-11-04",
+        "emoji": "🍅"
+      }
+    ],
+    "recipe_suggestions": null,
+    "proposed_consumptions": null,
+    "clarification": null
+  }
+}

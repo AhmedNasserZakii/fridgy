@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "conversation_id": "conv_7f2a1c9e",
+    "mode": "add_food",
+    "reply_kind": "clarification",
+    "user_message": {
+      "id": "msg_u_02",
+      "role": "user",
+      "content": "I bought some milk.",
+      "created_at": "2026-10-31T09:42:00Z"
+    },
+    "assistant_message": {
+      "id": "msg_a_02",
+      "role": "assistant",
+      "content": "Sure! How much milk did you buy?",
+      "created_at": "2026-10-31T09:42:01Z"
+    },
+    "proposed_items": null,
+    "recipe_suggestions": null,
+    "proposed_consumptions": null,
+    "clarification": {
+      "target_item": {
+        "id": "prop_milk_01",
+        "name": "Milk",
+        "quantity": null,
+        "unit": "l",
+        "category": "dairy",
+        "expires_at": null,
+        "emoji": "🥛"
+      },
+      "quick_replies": [
+        {
+          "label": "1 L",
+          "message": "1 liter"
+        },
+        {
+          "label": "2 L",
+          "message": "2 liters"
+        },
+        {
+          "label": "Other",
+          "message": null
+        }
+      ],
+      "hint": "No amount has been selected yet.",
+      "note": "Expiration date not provided. You can set it during review or continue without a date.",
+      "cancel_label": "Cancel this item",
+      "cancel_message": "Cancel the milk"
+    }
+  }
+}

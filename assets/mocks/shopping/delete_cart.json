@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "message": "Cart cleared",
+  "data": {
+    "id": "cart_01",
+    "items": [],
+    "item_count": 0,
+    "subtotal": 0.0,
+    "currency": "EGP",
+    "updated_at": "2026-10-31T12:35:00Z"
+  }
+}

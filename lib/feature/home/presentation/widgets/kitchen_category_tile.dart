@@ -15,30 +15,31 @@ class KitchenCategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 112,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ClipRRect(
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: Image.asset(
                 category.imageAsset,
-                height: 86,
+                width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              category.labelKey.tr(),
-              style: AppTextStyles.captionSemiBold12,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            category.labelKey.tr(),
+            style: AppTextStyles.captionSemiBold12,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }

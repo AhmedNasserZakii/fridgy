@@ -1,8 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fridgy/core/constants/app_assets.dart';
+import 'package:fridgy/core/shared_widgets/custom_network_image.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/core/theme/styles/app_text_styles.dart';
 import 'package:fridgy/feature/notification/domain/entities/notification_entity.dart';
@@ -43,28 +43,11 @@ class NotificationCard extends StatelessWidget {
               Row(
                 children: [
                   if (hasImage)
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: CachedNetworkImage(
-                        imageUrl: imageUrl,
-                        width: 54,
-                        height: 54,
-                        fit: BoxFit.cover,
-                        placeholder: (_, _) => Container(
-                          width: 54,
-                          height: 54,
-                          color: AppColors.borderDefault,
-                        ),
-                        errorWidget: (_, _, _) => Container(
-                          width: 54,
-                          height: 54,
-                          color: AppColors.borderDefault,
-                          child: const Icon(
-                            Icons.broken_image_outlined,
-                            color: AppColors.textSecondary,
-                          ),
-                        ),
-                      ),
+                    CustomNetworkImage(
+                      imageUrl: imageUrl,
+                      width: 54,
+                      height: 54,
+                      borderRadius: 12,
                     )
                   else
                     SvgPicture.asset(

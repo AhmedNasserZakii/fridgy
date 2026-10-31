@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "id": "prd_01",
+    "name": "Baby Spinach",
+    "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&h=400&q=80",
+    "category": "vegetables",
+    "default_quantity": 1,
+    "unit": "pcs",
+    "default_storage": "fridge",
+    "price": 25.0,
+    "currency": "EGP"
+  }
+}

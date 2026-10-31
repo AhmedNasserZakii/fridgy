@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fridgy/core/shared_widgets/custom_network_image.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/core/theme/styles/app_text_styles.dart';
 import 'package:fridgy/feature/inventory/domain/entities/expiry_status.dart';
@@ -18,8 +18,8 @@ class FoodCard extends StatelessWidget {
     final expiryStyle = switch (item.expiryStatus) {
       ExpiryStatus.useSoon => AppTextStyles.captionSemiBold12Warning,
       ExpiryStatus.expired => AppTextStyles.errorCaptionRegular12.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
+          fontWeight: FontWeight.w600,
+        ),
       ExpiryStatus.fresh || null => AppTextStyles.captionRegular12,
     };
 
@@ -33,38 +33,11 @@ class FoodCard extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: item.imageUrl == null || item.imageUrl!.isEmpty
-                    ? Container(
-                        width: 72,
-                        height: 72,
-                        color: AppColors.borderDefault,
-                        child: const Icon(
-                          Icons.image_not_supported_outlined,
-                          color: AppColors.textSecondary,
-                        ),
-                      )
-                    : CachedNetworkImage(
-                        imageUrl: item.imageUrl!,
-                        width: 72,
-                        height: 72,
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) => Container(
-                          width: 72,
-                          height: 72,
-                          color: AppColors.borderDefault,
-                        ),
-                        errorWidget: (context, url, error) => Container(
-                          width: 72,
-                          height: 72,
-                          color: AppColors.borderDefault,
-                          child: const Icon(
-                            Icons.broken_image_outlined,
-                            color: AppColors.textSecondary,
-                          ),
-                        ),
-                      ),
+              CustomNetworkImage(
+                imageUrl: item.imageUrl ?? '',
+                width: 72,
+                height: 72,
+                borderRadius: 12,
               ),
               const SizedBox(width: 12),
               Expanded(

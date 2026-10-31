@@ -344,4 +344,95 @@ abstract class LocaleKeys {
   static const String helpVersionLine = 'help_version_line';
   static const String preferencesSaved = 'preferences_saved';
   static const String signedOut = 'signed_out';
+
+  // Fridge AI
+  static const String fridgeAiTitle = 'fridge_ai_title';
+  static const String back = 'back';
+  static const String history = 'history';
+  static const String fridgeAiModeAddFood = 'fridge_ai_mode_add_food';
+  static const String fridgeAiModeUseFood = 'fridge_ai_mode_use_food';
+  static const String fridgeAiWelcomeHeading = 'fridge_ai_welcome_heading';
+  static const String fridgeAiWelcomeBody = 'fridge_ai_welcome_body';
+  static const String fridgeAiAddFoodCardBody = 'fridge_ai_add_food_card_body';
+  static const String fridgeAiUseFoodCardBody = 'fridge_ai_use_food_card_body';
+  static const String fridgeAiComposerHintAdd = 'fridge_ai_composer_hint_add';
+  static const String fridgeAiComposerHintUse = 'fridge_ai_composer_hint_use';
+  static const String fridgeAiTrySaying = 'fridge_ai_try_saying';
+  static const String fridgeAiAddHeading = 'fridge_ai_add_heading';
+  static const String fridgeAiAddBody = 'fridge_ai_add_body';
+  static const String fridgeAiUseHeading = 'fridge_ai_use_heading';
+  static const String fridgeAiUseBody = 'fridge_ai_use_body';
+  static const String fridgeAiPromptAdd1 = 'fridge_ai_prompt_add_1';
+  static const String fridgeAiPromptAdd2 = 'fridge_ai_prompt_add_2';
+  static const String fridgeAiPromptAdd3 = 'fridge_ai_prompt_add_3';
+  static const String fridgeAiPromptUse1 = 'fridge_ai_prompt_use_1';
+  static const String fridgeAiPromptUse2 = 'fridge_ai_prompt_use_2';
+  static const String fridgeAiPromptUse3 = 'fridge_ai_prompt_use_3';
+  static const String fridgeAiHistoryTitle = 'fridge_ai_history_title';
+  static const String fridgeAiHistoryEmpty = 'fridge_ai_history_empty';
+  static const String fridgeAiCheckingNote = 'fridge_ai_checking_note';
+  static const String fridgeAiProposedItemsTitle =
+      'fridge_ai_proposed_items_title';
+  static const String fridgeAiProposedConsumptionsTitle =
+      'fridge_ai_proposed_consumptions_title';
+  static const String fridgeAiRecipesTitle = 'fridge_ai_recipes_title';
+  static const String fridgeAiConfirmAdd = 'fridge_ai_confirm_add';
+  static const String fridgeAiConfirmConsume = 'fridge_ai_confirm_consume';
+  static const String fridgeAiItemsAdded = 'fridge_ai_items_added';
+  static const String fridgeAiInventoryUpdated = 'fridge_ai_inventory_updated';
+  static const String fridgeAiNewChat = 'fridge_ai_new_chat';
+  static const String fridgeAiDelivered = 'fridge_ai_delivered';
+  static const String fridgeAiSuccessHeadingAdd =
+      'fridge_ai_success_heading_add';
+  static const String fridgeAiSuccessHeadingUse =
+      'fridge_ai_success_heading_use';
+  static const String fridgeAiSuccessViewFridge =
+      'fridge_ai_success_view_fridge';
+  static const String fridgeAiSuccessAddMore = 'fridge_ai_success_add_more';
+  static const String fridgeAiSuccessUseMore = 'fridge_ai_success_use_more';
+  static const String fridgeAiSuccessSupportAdd =
+      'fridge_ai_success_support_add';
+  static const String fridgeAiSuccessSupportUse =
+      'fridge_ai_success_support_use';
+  static const String fridgeAiAddPhoto = 'fridge_ai_add_photo';
+  static const String fridgeAiTakePhoto = 'fridge_ai_take_photo';
+  static const String fridgeAiChooseGallery = 'fridge_ai_choose_gallery';
+  static const String fridgeAiComposerHintImage =
+      'fridge_ai_composer_hint_image';
+
+  // Shopping
+  static const String shoppingTabList = 'shopping_tab_list';
+  static const String shoppingTabStore = 'shopping_tab_store';
+  static const String shoppingCart = 'shopping_cart';
+  static const String shoppingOrders = 'shopping_orders';
+  static const String shoppingAddItem = 'shopping_add_item';
+  static const String shoppingListEmptyTitle = 'shopping_list_empty_title';
+  static const String shoppingListEmptyBody = 'shopping_list_empty_body';
+  static const String shoppingCompletePurchase = 'shopping_complete_purchase';
+  static const String shoppingLoadFailed = 'shopping_load_failed';
+  static const String shoppingSearchCatalog = 'shopping_search_catalog';
+  static const String shoppingCatalogEmpty = 'shopping_catalog_empty';
+  static const String shoppingProductDetail = 'shopping_product_detail';
+  static const String shoppingAddToCart = 'shopping_add_to_cart';
+  static const String shoppingAddToList = 'shopping_add_to_list';
+  static const String shoppingAddedToCart = 'shopping_added_to_cart';
+  static const String shoppingAddedToList = 'shopping_added_to_list';
+  static const String shoppingCartEmpty = 'shopping_cart_empty';
+  static const String shoppingPlaceOrder = 'shopping_place_order';
+  static const String shoppingOrderPlaced = 'shopping_order_placed';
+  static const String shoppingSubtotal = 'shopping_subtotal';
+  static const String shoppingOrdersEmpty = 'shopping_orders_empty';
+  static const String shoppingOrderId = 'shopping_order_id';
+  static const String shoppingOrderDetail = 'shopping_order_detail';
+  static const String shoppingOrderStatusPlaced =
+      'shopping_order_status_placed';
+  static const String shoppingOrderStatusReceived =
+      'shopping_order_status_received';
+  static const String shoppingOrderStatusAdded = 'shopping_order_status_added';
+  static const String shoppingMarkReceived = 'shopping_mark_received';
+  static const String shoppingReviewFridge = 'shopping_review_fridge';
+  static const String shoppingReviewFridgeBody = 'shopping_review_fridge_body';
+  static const String shoppingConfirmAddToFridge =
+      'shopping_confirm_add_to_fridge';
+  static const String shoppingAddedToFridge = 'shopping_added_to_fridge';
 }

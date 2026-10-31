@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "message": "Item added to shopping list",
+  "data": {
+    "id": "sli_06",
+    "name": "Cucumbers",
+    "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&h=400&q=80",
+    "quantity": 2,
+    "unit": "pcs",
+    "category": "vegetables",
+    "is_checked": false,
+    "catalog_product_id": null,
+    "notes": null,
+    "created_at": "2026-10-31T12:00:00Z",
+    "updated_at": "2026-10-31T12:00:00Z"
+  }
+}

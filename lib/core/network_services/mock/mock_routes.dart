@@ -96,6 +96,87 @@ abstract class MockRoutes {
       assetPath:
           'assets/mocks/notification_settings/put_notification_settings.json',
     ),
+
+    // Fridge AI
+    'POST ${WebConstant.fridgeAiMessages}': const MockResponse(
+      assetPath: 'assets/mocks/fridge_ai/post_messages_add_food.json',
+    ),
+    'POST ${WebConstant.fridgeAiMessagesImage}': const MockResponse(
+      assetPath: 'assets/mocks/fridge_ai/post_messages_image.json',
+    ),
+    'GET ${WebConstant.fridgeAiConversations}': const MockResponse(
+      assetPath: 'assets/mocks/fridge_ai/get_conversations.json',
+    ),
+    'GET ${WebConstant.fridgeAiConversationMessages('{id}')}':
+        const MockResponse(
+      assetPath: 'assets/mocks/fridge_ai/get_conversation_messages.json',
+    ),
+
+    // Shopping — list
+    'GET ${WebConstant.shoppingList}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_list.json',
+    ),
+    'POST ${WebConstant.shoppingList}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_list.json',
+      statusCode: 201,
+    ),
+    'PUT ${WebConstant.shoppingListItem('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/put_list_item.json',
+    ),
+    'DELETE ${WebConstant.shoppingListItem('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/delete_list_item.json',
+    ),
+    'POST ${WebConstant.shoppingListToggle('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_list_toggle.json',
+    ),
+    'POST ${WebConstant.shoppingListComplete}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_list_complete.json',
+    ),
+
+    // Shopping — catalog
+    'GET ${WebConstant.shoppingCatalog}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_catalog.json',
+    ),
+    'GET ${WebConstant.shoppingCatalogProduct('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_catalog_product.json',
+    ),
+
+    // Shopping — cart
+    'GET ${WebConstant.shoppingCart}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_cart.json',
+    ),
+    'POST ${WebConstant.shoppingCartItems}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_cart_item.json',
+      statusCode: 201,
+    ),
+    'PUT ${WebConstant.shoppingCartItem('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/put_cart_item.json',
+    ),
+    'DELETE ${WebConstant.shoppingCartItem('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/delete_cart_item.json',
+    ),
+    'DELETE ${WebConstant.shoppingCart}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/delete_cart.json',
+    ),
+
+    // Shopping — orders + fridge intake
+    'POST ${WebConstant.shoppingOrders}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_order.json',
+      statusCode: 201,
+    ),
+    'GET ${WebConstant.shoppingOrders}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_orders.json',
+    ),
+    'GET ${WebConstant.shoppingOrder('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/get_order.json',
+    ),
+    'POST ${WebConstant.shoppingOrderComplete('{id}')}': const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_order_complete.json',
+    ),
+    'POST ${WebConstant.shoppingFridgeIntakeConfirm('{id}')}':
+        const MockResponse(
+      assetPath: 'assets/mocks/shopping/post_fridge_intake_confirm.json',
+    ),
   };
 
   /// Named empty / error scenarios for manual testing.
@@ -150,6 +231,85 @@ abstract class MockRoutes {
     assetPath:
         'assets/mocks/notification_settings/put_notification_settings_422.json',
     statusCode: 422,
+  );
+  static const MockResponse fridgeAiMessagesAddFood = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_add_food.json',
+  );
+  static const MockResponse fridgeAiMessagesUseFood = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_use_food.json',
+  );
+  static const MockResponse fridgeAiMessagesClarification = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_clarification.json',
+  );
+  static const MockResponse fridgeAiMessagesImage = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_image.json',
+  );
+  static const MockResponse fridgeAiMessagesImage422 = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_image_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse fridgeAiMessages422 = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse fridgeAiMessages429 = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_429.json',
+    statusCode: 429,
+  );
+  static const MockResponse fridgeAiMessages503 = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/post_messages_503.json',
+    statusCode: 503,
+  );
+  static const MockResponse fridgeAiConversationsEmpty = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/get_conversations_empty.json',
+  );
+  static const MockResponse fridgeAiConversationMessages404 = MockResponse(
+    assetPath: 'assets/mocks/fridge_ai/get_conversation_messages_404.json',
+    statusCode: 404,
+  );
+  static const MockResponse shoppingListEmpty = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_list_empty.json',
+  );
+  static const MockResponse shoppingListCreate422 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_list_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse shoppingListComplete422 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_list_complete_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse shoppingCatalogEmpty = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_catalog_empty.json',
+  );
+  static const MockResponse shoppingCatalogProduct404 = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_catalog_product_404.json',
+    statusCode: 404,
+  );
+  static const MockResponse shoppingCartEmpty = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_cart_empty.json',
+  );
+  static const MockResponse shoppingOrder422 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_order_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse shoppingOrdersEmpty = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_orders_empty.json',
+  );
+  static const MockResponse shoppingOrder404 = MockResponse(
+    assetPath: 'assets/mocks/shopping/get_order_404.json',
+    statusCode: 404,
+  );
+  static const MockResponse shoppingOrderComplete409 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_order_complete_409.json',
+    statusCode: 409,
+  );
+  static const MockResponse shoppingFridgeIntakeConfirm422 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_fridge_intake_confirm_422.json',
+    statusCode: 422,
+  );
+  static const MockResponse shoppingFridgeIntakeConfirm404 = MockResponse(
+    assetPath: 'assets/mocks/shopping/post_fridge_intake_confirm_404.json',
+    statusCode: 404,
   );
 
   static MockResponse? resolve(String method, String path) {
