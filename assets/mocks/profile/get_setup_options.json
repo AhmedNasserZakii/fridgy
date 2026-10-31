@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "food_categories": [
+      { "id": "egyptian_classics", "name": "Egyptian Classics", "emoji": "🍲" },
+      { "id": "italian", "name": "Italian", "emoji": "🍝" },
+      { "id": "asian", "name": "Asian", "emoji": "🍜" },
+      { "id": "mediterranean", "name": "Mediterranean", "emoji": "🫒" },
+      { "id": "grilled_and_bbq", "name": "Grilled & BBQ", "emoji": "🍖" },
+      { "id": "healthy_and_light", "name": "Healthy & Light", "emoji": "🥗" },
+      { "id": "fast_and_easy_meals", "name": "Fast & Easy Meals", "emoji": "🌮" },
+      { "id": "comfort_food", "name": "Comfort Food", "emoji": "🥘" },
+      { "id": "sweet_treats", "name": "Sweet Treats", "emoji": "🧁" }
+    ],
+    "diets": [
+      { "id": "no_specific_diet", "name": "No Specific Diet" },
+      { "id": "vegetarian", "name": "Vegetarian" },
+      { "id": "vegan", "name": "Vegan" },
+      { "id": "high_protein", "name": "High Protein" },
+      { "id": "low_carb", "name": "Low Carb" },
+      { "id": "other", "name": "Other" }
+    ],
+    "avoid_ingredients": [
+      { "id": "peanuts", "name": "Peanuts" },
+      { "id": "tree_nuts", "name": "Tree Nuts" },
+      { "id": "milk", "name": "Milk" },
+      { "id": "eggs", "name": "Eggs" },
+      { "id": "gluten", "name": "Gluten" },
+      { "id": "soy", "name": "Soy" },
+      { "id": "fish", "name": "Fish" },
+      { "id": "shellfish", "name": "Shellfish" },
+      { "id": "sesame", "name": "Sesame" },
+      { "id": "mustard", "name": "Mustard" }
+    ]
+  }
+}

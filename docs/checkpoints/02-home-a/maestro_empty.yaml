@@ -1,0 +1,27 @@
+appId: com.example.fridgy
+---
+- launchApp
+- runFlow:
+    when:
+      visible: "Sign in"
+    commands:
+      - tapOn: "Sign in"
+      - tapOn: "Enter your email"
+      - inputText: "alex@example.com"
+      - tapOn: "Enter your password"
+      - inputText: "password123"
+      - pressKey: Enter
+- runFlow:
+    when:
+      visible: "I'll Do This Later"
+    commands:
+      - tapOn: "I'll Do This Later"
+      - tapOn: "I'll Do This Later"
+      - tapOn: "I'll Do This Later"
+      - tapOn: "I'll Do This Later"
+      - tapOn: "Maybe Later"
+      - tapOn: "Let's Explore Fridgy"
+- extendedWaitUntil:
+    visible: ".*kitchen.*|.*empty.*|Good"
+    timeout: 20000
+- takeScreenshot: empty

@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "itm_9a21",
+      "name": "Baby Spinach",
+      "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 250,
+      "unit": "g",
+      "storage": "fridge",
+      "is_partly_used": false,
+      "expiry_date": "2026-10-30",
+      "days_left": 1,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-25T18:20:00Z",
+      "category": "vegetables",
+      "purchase_date": "2026-10-25"
+    },
+    {
+      "id": "itm_2b18",
+      "name": "Chicken Breast",
+      "image_url": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 500,
+      "unit": "g",
+      "storage": "fridge",
+      "is_partly_used": false,
+      "expiry_date": "2026-10-30",
+      "days_left": 1,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-27T09:15:00Z",
+      "category": "meat",
+      "purchase_date": "2026-10-27"
+    },
+    {
+      "id": "itm_7c44",
+      "name": "Strawberries",
+      "image_url": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 300,
+      "unit": "g",
+      "storage": "fridge",
+      "is_partly_used": false,
+      "expiry_date": "2026-10-31",
+      "days_left": 2,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-26T10:00:00Z",
+      "category": "fruits",
+      "purchase_date": "2026-10-26"
+    },
+    {
+      "id": "itm_8f33",
+      "name": "White Cheese",
+      "image_url": "https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 200,
+      "unit": "g",
+      "storage": "fridge",
+      "is_partly_used": false,
+      "expiry_date": "2026-10-31",
+      "days_left": 2,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-24T16:45:00Z",
+      "category": "dairy",
+      "purchase_date": "2026-10-24"
+    },
+    {
+      "id": "itm_4d90",
+      "name": "Fresh Milk",
+      "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 1,
+      "unit": "l",
+      "storage": "fridge",
+      "is_partly_used": true,
+      "expiry_date": "2026-11-01",
+      "days_left": 3,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-28T08:00:00Z",
+      "category": "dairy",
+      "purchase_date": "2026-10-28"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 5,
+    "last_page": 1
+  }
+}

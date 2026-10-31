@@ -17,14 +17,8 @@ class WelcomeActions extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        PrimaryButton(
-          label: 'Get started',
-          onPressed: onGetStarted,
-        ),
-        TextActionButton(
-          label: 'Sign in',
-          onPressed: onSignIn,
-        ),
+        PrimaryButton(label: 'Get started', onPressed: onGetStarted),
+        TextActionButton(label: 'Sign in', onPressed: onSignIn),
       ],
     );
   }

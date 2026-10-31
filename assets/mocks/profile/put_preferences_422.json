@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "message": "The given data was invalid.",
+  "errors": {
+    "household_size": ["The household size must be between 1 and 5."]
+  }
+}

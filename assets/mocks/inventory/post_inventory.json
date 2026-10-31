@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "message": "Item added successfully",
+  "data": {
+    "id": "itm_new01",
+    "name": "Cucumbers",
+    "image_url": "https://images.unsplash.com/photo-1449301253381-0d682b1f0a0a?auto=format&fit=crop&w=400&h=400&q=80",
+    "quantity": 2,
+    "unit": "pcs",
+    "storage": "fridge",
+    "category": "vegetables",
+    "is_partly_used": false,
+    "purchase_date": "2026-10-28",
+    "expiry_date": "2026-11-04",
+    "days_left": 6,
+    "expiry_status": "fresh",
+    "added_at": "2026-10-31T10:00:00Z"
+  }
+}

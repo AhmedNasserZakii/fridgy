@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "household_size": 2,
+    "favorite_food_ids": ["italian", "healthy_and_light", "egyptian_classics"],
+    "diet_id": "no_specific_diet",
+    "avoid_ingredient_ids": ["peanuts", "shellfish"],
+    "works_out": true,
+    "workout_frequency": "days_3_4",
+    "notifications_enabled": true
+  }
+}

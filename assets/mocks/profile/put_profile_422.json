@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "email": ["Email is already taken"],
+    "name": ["Name must be at least 2 characters"]
+  }
+}

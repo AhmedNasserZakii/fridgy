@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/feature/onboarding/presentation/logic/onboarding_steps_manager.dart';
-import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_step_page.dart';
+import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_step_carousel_item.dart';
+import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_step_copy.dart';
+import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_step_progress.dart';
 import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_steps_actions.dart';
 import 'package:fridgy/feature/onboarding/presentation/widgets/onboarding_steps_nav.dart';
 
@@ -44,6 +46,8 @@ class _OnboardingStepsScreenState extends State<OnboardingStepsScreen> {
           child: ListenableBuilder(
             listenable: _manager,
             builder: (context, _) {
+              final step = OnboardingStepsManager.steps[_manager.currentIndex];
+
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -55,22 +59,37 @@ class _OnboardingStepsScreenState extends State<OnboardingStepsScreen> {
                       controller: _manager.pageController,
                       itemCount: OnboardingStepsManager.steps.length,
                       onPageChanged: _manager.onPageChanged,
+                      padEnds: true,
                       itemBuilder: (context, index) {
-                        return SingleChildScrollView(
-                          child: OnboardingStepPage(
-                            step: OnboardingStepsManager.steps[index],
-                            stepIndex: index,
-                            stepCount: OnboardingStepsManager.steps.length,
-                          ),
+                        return OnboardingStepCarouselItem(
+                          imagePath:
+                              OnboardingStepsManager.steps[index].imagePath,
+                          index: index,
+                          pageController: _manager.pageController,
                         );
                       },
                     ),
                   ),
                   const SizedBox(height: 16),
-                  OnboardingStepsActions(
-                    onContinue: () => _manager.continuePressed(
-                      onFinished: widget.onFinished,
+                  OnboardingStepProgress(
+                    currentIndex: _manager.currentIndex,
+                    stepCount: OnboardingStepsManager.steps.length,
+                  ),
+                  const SizedBox(height: 16),
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 280),
+                    switchInCurve: Curves.easeOut,
+                    switchOutCurve: Curves.easeIn,
+                    child: OnboardingStepCopy(
+                      key: ValueKey(_manager.currentIndex),
+                      title: step.title,
+                      body: step.body,
                     ),
+                  ),
+                  const SizedBox(height: 16),
+                  OnboardingStepsActions(
+                    onContinue: () =>
+                        _manager.continuePressed(onFinished: widget.onFinished),
                     onSkip: widget.onSkip,
                   ),
                   const SizedBox(height: 8),

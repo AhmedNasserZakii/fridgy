@@ -1,0 +1,19 @@
+appId: com.example.fridgy
+---
+- launchApp:
+    clearState: true
+- tapOn: "Sign in"
+- tapOn: "Enter your email"
+- inputText: "alex@example.com"
+- tapOn: "Enter your password"
+- inputText: "password123"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible: "Good afternoon, Alex!"
+    timeout: 20000
+- takeScreenshot: loaded-top
+- scrollUntilVisible:
+    element: "Fridgy Suggests"
+    direction: DOWN
+    timeout: 30000
+- takeScreenshot: loaded-bottom

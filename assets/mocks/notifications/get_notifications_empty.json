@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "message": null,
+  "data": [],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 0,
+    "last_page": 1,
+    "unread_count": 0
+  }
+}

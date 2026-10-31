@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OnboardingStepHero extends StatelessWidget {
-  const OnboardingStepHero({
-    super.key,
-    required this.imagePath,
-  });
+  const OnboardingStepHero({super.key, required this.imagePath});
 
   final String imagePath;
 
@@ -12,11 +9,12 @@ class OnboardingStepHero extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(28),
-      child: Image.asset(
-        imagePath,
-        height: 330,
-        width: double.infinity,
-        fit: BoxFit.cover,
+      child: SizedBox.expand(
+        child: Image.asset(
+          imagePath,
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+        ),
       ),
     );
   }

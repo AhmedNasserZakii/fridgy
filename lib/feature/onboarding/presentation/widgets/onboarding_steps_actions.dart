@@ -17,14 +17,8 @@ class OnboardingStepsActions extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        PrimaryButton(
-          label: 'Continue',
-          onPressed: onContinue,
-        ),
-        TextActionButton(
-          label: 'Skip for now',
-          onPressed: onSkip,
-        ),
+        PrimaryButton(label: 'Continue', onPressed: onContinue),
+        TextActionButton(label: 'Skip for now', onPressed: onSkip),
       ],
     );
   }

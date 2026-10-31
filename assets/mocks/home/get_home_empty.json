@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": null,
+  "data": {
+    "kitchen_summary": {
+      "total_items": 0,
+      "expiring_soon_count": 0
+    },
+    "unread_notifications_count": 0,
+    "use_first": [],
+    "weekly_impact": null,
+    "suggestion": null
+  }
+}

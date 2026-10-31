@@ -42,10 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              WelcomeActions(
-                onGetStarted: onGetStarted,
-                onSignIn: onSignIn,
-              ),
+              WelcomeActions(onGetStarted: onGetStarted, onSignIn: onSignIn),
             ],
           ),
         ),

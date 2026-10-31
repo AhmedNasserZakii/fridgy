@@ -4,7 +4,7 @@ import 'package:fridgy/feature/onboarding/domain/entities/onboarding_step_entity
 
 class OnboardingStepsManager extends ChangeNotifier {
   OnboardingStepsManager() {
-    pageController = PageController();
+    pageController = PageController(viewportFraction: 0.92);
   }
 
   late final PageController pageController;
@@ -14,20 +14,17 @@ class OnboardingStepsManager extends ChangeNotifier {
     OnboardingStepEntity(
       imagePath: AppAssets.onboardingStepOrder,
       title: 'A little order. A lot more fresh.',
-      body:
-          "Keep your fridge, freezer and pantry together. Add food your way, and always know what's at home.",
+      body: "Keep your fridge, freezer and pantry together. Add food your way, and always know what's at home.",
     ),
     OnboardingStepEntity(
       imagePath: AppAssets.onboardingStepReminder,
       title: 'Good food deserves a reminder.',
-      body:
-          "Get a gentle nudge before the dates you enter. Always check packaging and food condition—reminders don't guarantee safety.",
+      body: "Get a gentle nudge before the dates you enter. Always check packaging and food condition—reminders don't guarantee safety.",
     ),
     OnboardingStepEntity(
       imagePath: AppAssets.onboardingStepRecipes,
       title: 'Dinner starts with what you have.',
-      body:
-          "Discover simple recipes for your ingredients. Turn a handful of spinach into tonight's favourite meal.",
+      body: "Discover simple recipes for your ingredients. Turn a handful of spinach into tonight's favourite meal.",
     ),
   ];
 
@@ -45,8 +42,8 @@ class OnboardingStepsManager extends ChangeNotifier {
     }
 
     pageController.nextPage(
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
+      duration: const Duration(milliseconds: 420),
+      curve: Curves.easeOutCubic,
     );
   }
 

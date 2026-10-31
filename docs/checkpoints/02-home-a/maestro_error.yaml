@@ -1,0 +1,7 @@
+appId: com.example.fridgy
+---
+- launchApp
+- extendedWaitUntil:
+    visible: ".*Try again.*|.*went wrong.*|.*error.*|.*Error.*"
+    timeout: 20000
+- takeScreenshot: error

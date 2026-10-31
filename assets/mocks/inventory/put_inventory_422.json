@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "The given data was invalid.",
+  "errors": {
+    "expiry_date": [
+      "The expiry date must be a valid date."
+    ]
+  }
+}

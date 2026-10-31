@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "ntf_51c0",
+      "type": "expiry_reminder",
+      "title": "Spinach is up next",
+      "body": "250 g · entered date 30 Oct · 1 day left",
+      "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=200&h=200&q=80",
+      "is_read": false,
+      "created_at": "2026-10-31T07:00:00Z",
+      "action": {
+        "type": "food_item",
+        "id": "itm_9a21"
+      }
+    },
+    {
+      "id": "ntf_51c1",
+      "type": "expiry_reminder",
+      "title": "Chicken for tonight?",
+      "body": "500 g · entered date 30 Oct · 1 day left",
+      "image_url": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=200&h=200&q=80",
+      "is_read": false,
+      "created_at": "2026-10-31T07:00:00Z",
+      "action": {
+        "type": "food_item",
+        "id": "itm_2b18"
+      }
+    },
+    {
+      "id": "ntf_51c2",
+      "type": "household_update",
+      "title": "Nour updated the shopping list",
+      "body": "Added eggs and bread to your shared list.",
+      "image_url": null,
+      "is_read": false,
+      "created_at": "2026-10-31T06:42:00Z",
+      "action": {
+        "type": "shopping_list",
+        "id": "shp_01"
+      }
+    },
+    {
+      "id": "ntf_51c3",
+      "type": "meal_plan",
+      "title": "Your weekly plan is ready",
+      "body": "Spinach pasta is planned for Thursday.",
+      "image_url": null,
+      "is_read": true,
+      "created_at": "2026-10-30T16:15:00Z",
+      "action": {
+        "type": "meal_plan",
+        "id": "mpl_01"
+      }
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 4,
+    "last_page": 1,
+    "unread_count": 3
+  }
+}

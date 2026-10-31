@@ -18,9 +18,7 @@ class TextActionButton extends StatelessWidget {
       height: 52,
       child: TextButton(
         onPressed: onPressed,
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.zero,
-        ),
+        style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(
           label,
           style: AppTextStyles.bodySemiBold16Brand,

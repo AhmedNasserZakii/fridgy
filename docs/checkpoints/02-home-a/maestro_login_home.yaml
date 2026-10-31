@@ -1,0 +1,20 @@
+appId: com.example.fridgy
+---
+- launchApp:
+    clearState: true
+- tapOn: "Sign in"
+- tapOn: "Enter your email"
+- inputText: "alex@example.com"
+- tapOn: "Enter your password"
+- inputText: "password123"
+- hideKeyboard
+- tapOn: "Sign In"
+- extendedWaitUntil:
+    visible: "Good"
+    timeout: 15000
+- takeScreenshot: docs/checkpoints/02-home-a/01-loaded-top
+- scrollUntilVisible:
+    element: "Fridgy Suggests"
+    direction: DOWN
+    timeout: 20000
+- takeScreenshot: docs/checkpoints/02-home-a/02-loaded-bottom

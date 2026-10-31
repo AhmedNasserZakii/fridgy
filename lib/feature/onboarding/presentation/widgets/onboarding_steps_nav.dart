@@ -3,10 +3,7 @@ import 'package:fridgy/core/shared_widgets/fridgy_brand_header.dart';
 import 'package:fridgy/core/theme/styles/app_text_styles.dart';
 
 class OnboardingStepsNav extends StatelessWidget {
-  const OnboardingStepsNav({
-    super.key,
-    required this.onSkip,
-  });
+  const OnboardingStepsNav({super.key, required this.onSkip});
 
   final VoidCallback onSkip;
 
@@ -20,10 +17,7 @@ class OnboardingStepsNav extends StatelessWidget {
           minimumSize: Size.zero,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        child: const Text(
-          'Skip',
-          style: AppTextStyles.secondaryBodyRegular14,
-        ),
+        child: const Text('Skip', style: AppTextStyles.secondaryBodyRegular14),
       ),
     );
   }

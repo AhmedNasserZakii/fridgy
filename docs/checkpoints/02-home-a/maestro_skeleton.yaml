@@ -1,0 +1,7 @@
+appId: com.example.fridgy
+---
+- launchApp
+- takeScreenshot: skeleton
+- extendedWaitUntil:
+    visible: "24 Items|Your fridge"
+    timeout: 15000

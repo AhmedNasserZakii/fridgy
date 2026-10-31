@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "remind_days_before": ["Must be between 1 and 14"]
+  }
+}

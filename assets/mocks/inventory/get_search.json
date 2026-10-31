@@ -1,0 +1,42 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+    {
+      "id": "itm_4d90",
+      "name": "Fresh Milk",
+      "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 1,
+      "unit": "l",
+      "storage": "fridge",
+      "is_partly_used": true,
+      "expiry_date": "2026-11-01",
+      "days_left": 3,
+      "expiry_status": "use_soon",
+      "added_at": "2026-10-28T08:00:00Z",
+      "category": "dairy",
+      "purchase_date": "2026-10-28"
+    },
+    {
+      "id": "itm_6e12",
+      "name": "Minced Beef",
+      "image_url": "https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=200&h=200&q=80",
+      "quantity": 500,
+      "unit": "g",
+      "storage": "freezer",
+      "is_partly_used": false,
+      "expiry_date": "2026-12-15",
+      "days_left": 45,
+      "expiry_status": "fresh",
+      "added_at": "2026-10-20T14:30:00Z",
+      "category": "other",
+      "purchase_date": "2026-10-20"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "last_page": 1
+  }
+}

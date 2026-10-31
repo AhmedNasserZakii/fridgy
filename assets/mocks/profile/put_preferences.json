@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "message": "Preferences saved successfully",
+  "data": {
+    "user": {
+      "id": "usr_7f3c2a",
+      "name": "Alex Morgan",
+      "email": "alex@example.com",
+      "avatar_url": null,
+      "profile_completed": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "Notification settings updated",
+  "data": {
+    "os_permission_granted": true,
+    "expiry_reminders_enabled": true,
+    "remind_days_before": 2,
+    "reminder_time": "09:00",
+    "timezone": "Africa/Cairo",
+    "shopping_list_updates": true,
+    "household_activity": true,
+    "weekly_impact_recap": false
+  }
+}
