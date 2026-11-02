@@ -109,8 +109,8 @@ abstract class MockRoutes {
     ),
     'GET ${WebConstant.fridgeAiConversationMessages('{id}')}':
         const MockResponse(
-      assetPath: 'assets/mocks/fridge_ai/get_conversation_messages.json',
-    ),
+          assetPath: 'assets/mocks/fridge_ai/get_conversation_messages.json',
+        ),
 
     // Shopping — list
     'GET ${WebConstant.shoppingList}': const MockResponse(
@@ -175,8 +175,8 @@ abstract class MockRoutes {
     ),
     'POST ${WebConstant.shoppingFridgeIntakeConfirm('{id}')}':
         const MockResponse(
-      assetPath: 'assets/mocks/shopping/post_fridge_intake_confirm.json',
-    ),
+          assetPath: 'assets/mocks/shopping/post_fridge_intake_confirm.json',
+        ),
   };
 
   /// Named empty / error scenarios for manual testing.

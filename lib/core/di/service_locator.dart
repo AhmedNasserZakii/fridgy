@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:fridgy/core/connection/network_info.dart';
 import 'package:fridgy/core/local_storage/local_storage.dart';
 import 'package:fridgy/core/local_storage/secure_storage.dart';
+import 'package:fridgy/core/network_services/api_mode_controller.dart';
 import 'package:fridgy/core/network_services/api_service.dart';
 import 'package:fridgy/core/network_services/mock/mock_interceptor.dart';
 import 'package:fridgy/core/network_services/token_interceptor.dart';
@@ -69,9 +70,12 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<ThemeController>(
     () => ThemeController(localStorage: getIt()),
   );
+  getIt.registerLazySingleton<ApiModeController>(
+    () => ApiModeController(localStorage: getIt()),
+  );
   getIt.registerLazySingleton<Connectivity>(Connectivity.new);
   getIt.registerLazySingleton<NetworkInfo>(
-    () => NetworkInfoImpl(connectivity: getIt()),
+    () => NetworkInfoImpl(connectivity: getIt(), apiMode: getIt()),
   );
 
   getIt.registerLazySingleton<Dio>(() {
@@ -89,7 +93,7 @@ Future<void> setupServiceLocator() async {
           'Content-Type': 'application/json',
         },
       ),
-    )..interceptors.add(MockInterceptor());
+    )..interceptors.add(MockInterceptor(apiMode: getIt()));
 
     final dio = Dio(
       BaseOptions(
@@ -101,7 +105,7 @@ Future<void> setupServiceLocator() async {
     );
 
     dio.interceptors.addAll([
-      MockInterceptor(),
+      MockInterceptor(apiMode: getIt()),
       TokenInterceptor(
         secureStorage: secureStorage,
         localStorage: localStorage,
@@ -202,7 +206,9 @@ Future<void> setupServiceLocator() async {
   getIt.registerFactory<NotificationsCubit>(
     () => NotificationsCubit(notificationRepo: getIt()),
   );
-  getIt.registerFactory<MoreCubit>(() => MoreCubit(authRepo: getIt()));
+  getIt.registerFactory<MoreCubit>(
+    () => MoreCubit(authRepo: getIt(), apiModeController: getIt()),
+  );
   getIt.registerFactory<EditProfileCubit>(
     () => EditProfileCubit(moreRepo: getIt(), authRepo: getIt()),
   );

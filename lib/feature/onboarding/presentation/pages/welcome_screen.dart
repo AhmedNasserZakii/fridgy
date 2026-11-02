@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fridgy/core/network_services/web_constant.dart';
+import 'package:fridgy/core/shared_widgets/api_mode_switch.dart';
 import 'package:fridgy/core/shared_widgets/fridgy_brand_header.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/feature/onboarding/presentation/widgets/welcome_actions.dart';
@@ -38,6 +40,10 @@ class WelcomeScreen extends StatelessWidget {
                       WelcomeEditorialCopy(),
                       SizedBox(height: 16),
                       WelcomeKeywordsRow(),
+                      if (WebConstant.showApiModeToggle) ...[
+                        SizedBox(height: 8),
+                        ApiModeSwitch(),
+                      ],
                     ],
                   ),
                 ),

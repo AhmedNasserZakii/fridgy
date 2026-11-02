@@ -23,11 +23,11 @@ If `lib/core/network_services/mock/` does not exist yet, create it once:
 
 - `mock_route.dart` — `MockRoute { method, path (supports :param segments), asset, statusCode = 200, delay = 400ms }`.
 - `mock_routes.dart` — `abstract class MockRoutes { static const List<MockRoute> all = [...]; }` grouped by feature with comments. Allow a per-route `scenario` override so a developer can switch one endpoint to its error mock while testing.
-- `mock_interceptor.dart` — Dio `Interceptor`; in `onRequest`, if `WebConstant.useMocks` and a route matches method + path, wait `delay`, load the asset with `rootBundle.loadString`, `jsonDecode`, and:
+- `mock_interceptor.dart` — Dio `Interceptor`; in `onRequest`, if `ApiModeController.useMocks` and a route matches method + path, wait `delay`, load the asset with `rootBundle.loadString`, `jsonDecode`, and:
   - `statusCode` 2xx → `handler.resolve(Response(...))`
   - otherwise → `handler.reject(DioException.badResponse(...))` so `ServerFailure.fromDioException` handles it exactly like a real server error.
   - no matching route → `handler.next(options)` (falls through to real network).
-- `WebConstant.useMocks` (bool, default `true` during development).
+- `ApiModeController` (runtime local/live switch, default local; toggled on the Welcome and More screens).
 - Add the interceptor in `ApiService.client()` **before** the token/log interceptors.
 - `NetworkInfo`: in mock mode it may return `true` so the app works offline.
 

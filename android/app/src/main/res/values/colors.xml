@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches AppColors.surfaceDefault / warmIvory -->
+    <color name="splash_background">#FFFAF0</color>
+</resources>

@@ -388,5 +388,9 @@
   "shopping_review_fridge": "مراجعة عناصر الثلاجة",
   "shopping_review_fridge_body": "أكد التخزين والتفاصيل قبل إضافتها إلى ثلاجتك.",
   "shopping_confirm_add_to_fridge": "أضف إلى الثلاجة",
-  "shopping_added_to_fridge": "تمت إضافة {} عناصر إلى ثلاجتك"
+  "shopping_added_to_fridge": "تمت إضافة {} عناصر إلى ثلاجتك",
+  "api_mode_title": "استخدام الخادم الفعلي",
+  "api_mode_live_subtitle": "متصل بخادم Fridgy",
+  "api_mode_local_subtitle": "استخدام بيانات تجريبية محلية",
+  "api_mode_switched": "تم تغيير مصدر البيانات. يرجى تسجيل الدخول مرة أخرى."
 }

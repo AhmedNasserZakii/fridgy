@@ -10,4 +10,5 @@ abstract class LocalStorageKeys {
   static const String unitsLanguage = 'units_language';
   static const String unitsMeasurement = 'units_measurement';
   static const String unitsCurrency = 'units_currency';
+  static const String apiMode = 'api_mode';
 }

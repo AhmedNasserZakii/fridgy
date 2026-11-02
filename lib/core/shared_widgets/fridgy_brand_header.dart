@@ -21,7 +21,15 @@ class FridgyBrandHeader extends StatelessWidget {
             borderRadius: BorderRadius.circular(9),
           ),
           alignment: Alignment.center,
-          child: SvgPicture.asset(AppAssets.logoMark, width: 26, height: 27),
+          child: SvgPicture.asset(
+            AppAssets.logoMark,
+            width: 26,
+            height: 27,
+            colorFilter: const ColorFilter.mode(
+              AppColors.textInverse,
+              BlendMode.srcIn,
+            ),
+          ),
         ),
         const SizedBox(width: 10),
         const Expanded(

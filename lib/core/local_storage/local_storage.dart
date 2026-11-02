@@ -95,4 +95,12 @@ class LocalStorage {
   String getUnitsCurrency() {
     return _prefs.getString(LocalStorageKeys.unitsCurrency) ?? 'egp';
   }
+
+  Future<void> setApiMode(String value) {
+    return _prefs.setString(LocalStorageKeys.apiMode, value);
+  }
+
+  String? getApiMode() {
+    return _prefs.getString(LocalStorageKeys.apiMode);
+  }
 }

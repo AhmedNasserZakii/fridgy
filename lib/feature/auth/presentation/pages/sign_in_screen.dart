@@ -45,9 +45,9 @@ class _SignInScreenState extends State<SignInScreen> {
     if (!valid) return;
 
     context.read<LoginCubit>().login(
-      email: _emailController.text,
-      password: _passwordController.text,
-    );
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
   }
 
   void _clearFieldError(String field) {
@@ -78,10 +78,14 @@ class _SignInScreenState extends State<SignInScreen> {
             AppSnackBar.show(context, state.message);
           }
         } else if (state is LoginSuccess) {
-          final route = state.user.profileCompleted
-              ? AppRoute.home
-              : AppRoute.profileSetup;
-          Navigator.of(context).pushNamedAndRemoveUntil(route, (_) => false);
+          if (state.user.profileCompleted) {
+            AppRoute.openMainApp(Navigator.of(context));
+          } else {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              AppRoute.profileSetup,
+              (_) => false,
+            );
+          }
         }
       },
       builder: (context, state) {

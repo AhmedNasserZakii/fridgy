@@ -26,8 +26,8 @@ Mismatch decision (ask the user — it's their call):
 ## Step 3 — Switch
 
 - Set `WebConstant.baseUrl` / `baseUrlDev`.
-- Per endpoint: remove (or comment out) its routes from `mock_routes.dart` — the interceptor falls through to the network for unmatched routes. When **all** endpoints are live, set `WebConstant.useMocks = false`.
-- Make sure release builds can never use mocks (e.g. `useMocks` is `false` when `kReleaseMode`).
+- Per endpoint: remove (or comment out) its routes from `mock_routes.dart` — the interceptor falls through to the network for unmatched routes. When **all** endpoints are live, default `ApiModeController` to `ApiMode.live`.
+- Make sure release builds can never use mocks (e.g. `ApiModeController` forces `ApiMode.live` and `WebConstant.showApiModeToggle` is `false` in `kReleaseMode`).
 - Keep `assets/mocks/` for tests/dev, but remove `assets/mocks/` from `pubspec.yaml` assets for the release build if bundle size matters (ask the user).
 
 ## Step 4 — Verify in the app
@@ -38,7 +38,7 @@ Mismatch decision (ask the user — it's their call):
 
 ## Pre-launch checklist (when everything is `live`)
 
-- [ ] No route left in `mock_routes.dart` / `useMocks` false in release
+- [ ] No route left in `mock_routes.dart` / release builds forced to live mode
 - [ ] Prod base URL set, no dev URLs or debug logging (`LogInterceptor`) in release
 - [ ] No secrets in the repo
 - [ ] Every row in `STATUS.md` is `live`

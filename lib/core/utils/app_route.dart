@@ -343,6 +343,14 @@ abstract class AppRoute {
     }
   }
 
+  /// Lands on Fridgy AI with the nav shell underneath so Back returns home.
+  static void openMainApp([NavigatorState? navigator]) {
+    final nav = navigator ?? navigatorKey.currentState;
+    if (nav == null) return;
+    nav.pushNamedAndRemoveUntil(home, (_) => false);
+    nav.pushNamed(fridgeAi);
+  }
+
   static Future<void> _onSplashFinished() async {
     final navigator = navigatorKey.currentState;
     if (navigator == null) return;
@@ -356,7 +364,7 @@ abstract class AppRoute {
 
     final user = authRepo.getCachedUser();
     if (user != null && user.profileCompleted) {
-      navigator.pushReplacementNamed(home);
+      openMainApp(navigator);
       return;
     }
 

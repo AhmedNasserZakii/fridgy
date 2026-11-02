@@ -1,7 +1,7 @@
 abstract class AppAssets {
-  static const String splashLogo = 'assets/logos/splash_logo.svg';
-  static const String logoMark = 'assets/logos/mark.svg';
-  static const String logo = 'assets/logos/logo.svg';
+  static const String splashLogo = 'assets/logos/last-logo.svg';
+  static const String logoMark = 'assets/logos/last-logo.svg';
+  static const String logo = 'assets/logos/last-logo.svg';
 
   static const String onboardingWelcome =
       'assets/images/onboarding/welcome.jpg';

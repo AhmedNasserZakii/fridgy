@@ -19,7 +19,7 @@ A feature is **not done** until phase 2 is complete. Never finish phase 1 withou
 
 - Repo implementations are written **once, as final production code**: they call `ApiService` / Dio with real `WebConstant` paths and parse with real models.
 - In mock mode, a Dio `MockInterceptor` (`lib/core/network_services/mock/`) answers requests from `assets/mocks/` instead of the network. Routes are registered in `lib/core/network_services/mock/mock_routes.dart`.
-- Switching to the real backend = setting `WebConstant.useMocks = false` (or removing a route from the mock registry for per-endpoint switching). **No repo, cubit, model, or UI change should be needed.** If one is, the mock was wrong — fix the mock and the API doc too.
+- Local mocks vs the real backend is a runtime switch: `ApiModeController` (`lib/core/network_services/api_mode_controller.dart`, saved on the device), toggled from the Welcome and More screens (shown while `WebConstant.showApiModeToggle` is true). In local mode, removing a route from the mock registry sends just that endpoint to the real backend. **No repo, cubit, model, or UI change should be needed.** If one is, the mock was wrong — fix the mock and the API doc too.
 - Mock JSON files contain the **exact full response body**, including the envelope from `docs/api/README.md`. No shortcuts, no fields the backend won't send, no missing fields.
 - Every endpoint needs at least: one success mock, and mocks for the realistic failures the UI handles (e.g. `422` validation, `404`, empty list).
 

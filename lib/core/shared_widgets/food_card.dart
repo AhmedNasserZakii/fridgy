@@ -18,8 +18,8 @@ class FoodCard extends StatelessWidget {
     final expiryStyle = switch (item.expiryStatus) {
       ExpiryStatus.useSoon => AppTextStyles.captionSemiBold12Warning,
       ExpiryStatus.expired => AppTextStyles.errorCaptionRegular12.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
+        fontWeight: FontWeight.w600,
+      ),
       ExpiryStatus.fresh || null => AppTextStyles.captionRegular12,
     };
 

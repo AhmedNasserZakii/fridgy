@@ -48,3 +48,5 @@ app.*.map.json
 .widget_preview/
 # Reference project (not part of Fridgy)
 /tara_car/
+# Landing page (separate repo)
+/fridgy-landing/

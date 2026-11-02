@@ -71,12 +71,10 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       builder: (context, state) {
         final cubit = context.read<ProfileSetupCubit>();
         final isEdit = state.isEditMode;
-        final showBack = isEdit
-            ? true
-            : state.currentStep > 0 && state.currentStep < 6;
+        final showBack =
+            isEdit ? true : state.currentStep > 0 && state.currentStep < 6;
         final isSubmitting = state.submitStatus == SubmitStatus.loading;
-        final optionsFailed =
-            state.optionsStatus == OptionsStatus.failure &&
+        final optionsFailed = state.optionsStatus == OptionsStatus.failure &&
             (isEdit || state.currentStep == 1 || state.currentStep == 2);
 
         return PopScope(
@@ -117,8 +115,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                   Expanded(
                     child: optionsFailed
                         ? OptionsErrorView(
-                            message:
-                                state.optionsError ??
+                            message: state.optionsError ??
                                 LocaleKeys.optionsLoadFailed.tr(),
                             onRetry: cubit.load,
                           )
@@ -161,9 +158,8 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
             ? LocaleKeys.saveChanges.tr()
             : LocaleKeys.continueLabel.tr(),
         primaryTrailingIcon: AppAssets.icArrowRight,
-        onPrimaryPressed: state.canContinue && !isSubmitting
-            ? cubit.continueStep
-            : null,
+        onPrimaryPressed:
+            state.canContinue && !isSubmitting ? cubit.continueStep : null,
         isPrimaryLoading: isSubmitting,
         secondaryLabel: LocaleKeys.illDoThisLater.tr(),
         onSecondaryPressed: isSubmitting ? null : cubit.skipStep,
@@ -175,8 +171,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
         primaryLabel: LocaleKeys.letsExploreFridgy.tr(),
         primaryTrailingIcon: AppAssets.icArrowRight,
         onPrimaryPressed: () {
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil(AppRoute.home, (_) => false);
+          AppRoute.openMainApp(Navigator.of(context));
         },
       );
     }

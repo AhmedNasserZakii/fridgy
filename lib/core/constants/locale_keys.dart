@@ -22,6 +22,12 @@ abstract class LocaleKeys {
       'unknown_error_with_api_server';
   static const String anErrorOccurred = 'an_error_occurred';
   static const String comingSoon = 'coming_soon';
+
+  // API mode (local mocks vs live backend)
+  static const String apiModeTitle = 'api_mode_title';
+  static const String apiModeLiveSubtitle = 'api_mode_live_subtitle';
+  static const String apiModeLocalSubtitle = 'api_mode_local_subtitle';
+  static const String apiModeSwitched = 'api_mode_switched';
   static const String tryAgain = 'try_again';
   static const String homeComingSoon = 'home_coming_soon';
 

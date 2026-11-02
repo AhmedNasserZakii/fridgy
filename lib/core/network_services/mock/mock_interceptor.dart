@@ -5,8 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:fridgy/core/network_services/mock/mock_response.dart';
 import 'package:fridgy/core/network_services/mock/mock_routes.dart';
 import 'package:fridgy/core/network_services/web_constant.dart';
+import 'package:fridgy/core/network_services/api_mode_controller.dart';
 
 class MockInterceptor extends Interceptor {
+  MockInterceptor({required this._apiMode});
+
+  final ApiModeController _apiMode;
+
   static const Duration _delay = Duration(milliseconds: 600);
 
   @override
@@ -14,7 +19,7 @@ class MockInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    if (!WebConstant.useMocks) {
+    if (!_apiMode.useMocks) {
       handler.next(options);
       return;
     }
@@ -95,7 +100,8 @@ class MockInterceptor extends Interceptor {
     }
 
     final message = (data['message']?.toString() ?? '').toLowerCase().trim();
-    final needsQuantity = message.contains('some milk') ||
+    final needsQuantity =
+        message.contains('some milk') ||
         (message.contains('bought') &&
             message.contains('milk') &&
             !RegExp(r'\d').hasMatch(message));

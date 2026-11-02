@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fridgy/core/constants/app_assets.dart';
 import 'package:fridgy/core/constants/locale_keys.dart';
+import 'package:fridgy/core/network_services/web_constant.dart';
+import 'package:fridgy/core/shared_widgets/api_mode_switch.dart';
 import 'package:fridgy/core/shared_widgets/app_snack_bar.dart';
 import 'package:fridgy/core/theme/styles/app_colors.dart';
 import 'package:fridgy/core/theme/styles/app_text_styles.dart';
@@ -21,6 +23,9 @@ class MoreScreen extends StatelessWidget {
       listenWhen: (previous, current) =>
           previous.signedOut != current.signedOut && current.signedOut,
       listener: (context, state) {
+        if (state.apiModeSwitched) {
+          AppSnackBar.show(context, LocaleKeys.apiModeSwitched.tr());
+        }
         Navigator.of(context)
             .pushNamedAndRemoveUntil(AppRoute.signIn, (_) => false);
       },
@@ -92,6 +97,12 @@ class MoreScreen extends StatelessWidget {
                 title: LocaleKeys.helpAndSupport.tr(),
                 onTap: () => Navigator.of(context).pushNamed(AppRoute.help),
               ),
+              if (WebConstant.showApiModeToggle)
+                ApiModeSwitch(
+                  enabled: !state.isSigningOut,
+                  onChanged: (mode) =>
+                      context.read<MoreCubit>().switchApiMode(mode),
+                ),
               const SizedBox(height: 8),
               TextButton(
                 onPressed: state.isSigningOut

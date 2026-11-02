@@ -61,6 +61,10 @@ class SetupHeader extends StatelessWidget {
                     AppAssets.logoMark,
                     width: 26,
                     height: 27,
+                    colorFilter: const ColorFilter.mode(
+                      AppColors.textInverse,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 10),

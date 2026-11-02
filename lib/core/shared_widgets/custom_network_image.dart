@@ -39,11 +39,7 @@ class CustomNetworkImage extends StatelessWidget {
       height: height,
       color: placeholderColor,
       alignment: Alignment.center,
-      child: Icon(
-        icon,
-        size: errorIconSize,
-        color: AppColors.textSecondary,
-      ),
+      child: Icon(icon, size: errorIconSize, color: AppColors.textSecondary),
     );
   }
 

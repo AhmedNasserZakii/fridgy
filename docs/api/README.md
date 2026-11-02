@@ -12,7 +12,7 @@
 
 | Rule | Value |
 | --- | --- |
-| Base URL | `https://<host>/api/v1/` |
+| Base URL | `https://api.fridgy.easytechsolutions.site/api/v1/` |
 | Format | JSON (`Content-Type: application/json`), UTF-8. File uploads use `multipart/form-data`. |
 | Key naming | `snake_case` for all JSON keys and query params |
 | IDs | Strings (UUID recommended). Never assume numeric. |

@@ -388,5 +388,9 @@
   "shopping_review_fridge": "Review fridge items",
   "shopping_review_fridge_body": "Confirm storage and details before adding these to your fridge.",
   "shopping_confirm_add_to_fridge": "Add to fridge",
-  "shopping_added_to_fridge": "{} items added to your fridge"
+  "shopping_added_to_fridge": "{} items added to your fridge",
+  "api_mode_title": "Use live API",
+  "api_mode_live_subtitle": "Connected to the Fridgy server",
+  "api_mode_local_subtitle": "Using local demo data",
+  "api_mode_switched": "Data source changed. Please sign in again."
 }

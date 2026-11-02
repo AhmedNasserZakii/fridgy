@@ -1,6 +1,12 @@
 abstract class WebConstant {
-  static const String baseUrl = 'https://api.fridgy.app/api/v1/';
-  static const bool useMocks = true;
+  static const String baseUrl =
+      'https://api.fridgy.easytechsolutions.site/api/v1/';
+
+  /// Shows the Local data / Live API switch on the Welcome and More screens.
+  /// Set to false before a store release.
+  static const bool showApiModeToggle = true;
+
+  // Local mocks vs live API is chosen at runtime by ApiModeController.
 
   // Auth
   static const String register = 'auth/register';
